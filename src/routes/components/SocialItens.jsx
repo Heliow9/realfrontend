@@ -28,10 +28,10 @@ function SocialItens() {
         <div class="container">
             <div class="mbr-section-head">
                 <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Oque ta rolando nas redes sociais</strong></h4>
-                <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Itens&nbsp; vindos do instagram</h5>
+                {/* <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Itens&nbsp; vindos do instagram</h5> */}
             </div>
             <div class="row mt-4">
-                {
+                {/* {
                     instaData ? instaData.map((item, index) => (
                         <div class="item features-image сol-12 col-md-6 col-lg-4">
                             <div class="item-wrapper">
@@ -70,7 +70,13 @@ function SocialItens() {
 
                         </>
                     )
-                }
+                } */}
+
+                <iframe src="//lightwidget.com/widgets/185c5c0244ee5ab380e9b8f3709c637d.html"
+                    scrolling="no"
+                    allowtransparency="true"
+                    class="lightwidget-widget"
+                    className='instagram-integer'></iframe>
 
             </div>
         </div>

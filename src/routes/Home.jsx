@@ -12,13 +12,16 @@ import "../assets/mobirise/css/mbr-additional.css"
 import Navbar from './components/Navbar';
 import SocialItens from './components/SocialItens';
 import civil from './assets/images/1.jpg';
-import iluminacao from './assets/images/2.jpg'
+import iluminacao from './assets/images/2.png'
+import transmissao from './assets/images/3.jpg'
+import eolica from './assets/images/4.jpg'
+import aeroporto from './assets/images/6.jpg'
 
 
 function Home() {
 
 
-  
+
 
   return (<div>
 
@@ -107,13 +110,13 @@ function Home() {
                   <div class="text-wrapper">
 
                     <h5 class="card-title mbr-fonts-style display-5">
-                      <strong>Engenharia Civil</strong>
+                      <strong>Saneamento</strong>
                     </h5>
-                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Manutenção Predial. <br />
-                      - Reformas. <br />
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação. <br />
+                      - Manuteção. <br />
                       - Construções. <br />
-                      - Pavimentações. <br />
-                      - Requalificações..</p>
+                      - Construção. <br />
+                      - Ampliação de sistemas de distribuição de agua e esgotamento sanitário.</p>
                     <div class="mbr-section-btn">
                       <a href="#" class="btn btn-warning display-4">Leia mais</a>
                     </div>
@@ -134,13 +137,12 @@ function Home() {
                   <div class="text-wrapper">
 
                     <h5 class="card-title mbr-fonts-style display-5">
-                      <strong>Iluminação Pública</strong>
+                      <strong>Tecnologia da Informação</strong>
                     </h5>
                     <p class="mbr-text mbr-fonts-style mb-5 display-4">
-                      Manutenção preventiva, corretiva e melhorias de parques de IP.<br />
-                      Gestão global de parques de IP, com software e central 0800<br />
-                      Projetos luminotécnicos e consultoria em IP<br />
-                      Iluminação decorativa e de realce para sítios históricos e eventos de grande porte.
+                      - Telemetria de unidades de iluminação pública.<br />
+                      - Aplicação mobile para gerenciamento de parques de iluminação pública.<br />
+                      - Monitoramento de adultoras e bombas para sistemas de distribuição de água.<br />
 
                     </p>
                     <div class="mbr-section-btn">
@@ -157,6 +159,7 @@ function Home() {
             </div>
 
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card-wrapper">
               <div class="row">
@@ -164,14 +167,40 @@ function Home() {
                   <div class="text-wrapper">
 
                     <h5 class="card-title mbr-fonts-style display-5">
-                      <strong>Iluminação Pública</strong>
+                      <strong>Linhas de Transmissão</strong>
+                    </h5>
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação. <br />
+                      - Manutenção. <br />
+                      - Construção e ampliação de linhas de transmissão de 69kv até 500kv. <br />
+                    </p>
+                    <div class="mbr-section-btn">
+                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-5">
+                  <div class="img-wrapper">
+                    <img src={transmissao} alt="Construção Civil" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-6">
+            <div class="card-wrapper">
+              <div class="row">
+                <div class="col-12 col-md-7">
+                  <div class="text-wrapper">
+
+                    <h5 class="card-title mbr-fonts-style display-5">
+                      <strong>Iluminação</strong>
                     </h5>
                     <p class="mbr-text mbr-fonts-style mb-5 display-4">
-                      Manutenção preventiva, corretiva e melhorias de parques de IP.<br />
-                      Gestão global de parques de IP, com software e central 0800<br />
-                      Projetos luminotécnicos e consultoria em IP<br />
-                      Iluminação decorativa e de realce para sítios históricos e eventos de grande porte.
-
+                      - Gestão completa de parques de  iluminação.<br />
+                      - Iluminação Cénica ae decorativa.<br />
+                      - Iluminação Industrial.<br />
+                      - Iluminação Predial.<br />
                     </p>
                     <div class="mbr-section-btn">
                       <a href="#" class="btn btn-warning display-4">Leia mais</a>
@@ -187,6 +216,7 @@ function Home() {
             </div>
 
           </div>
+
           <div class="col-12 col-lg-6">
             <div class="card-wrapper">
               <div class="row">
@@ -194,13 +224,10 @@ function Home() {
                   <div class="text-wrapper">
 
                     <h5 class="card-title mbr-fonts-style display-5">
-                      <strong>Engenharia Civil</strong>
+                      <strong>Energia Éolica</strong>
                     </h5>
-                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Manutenção Predial. <br />
-                      - Reformas. <br />
-                      - Construções. <br />
-                      - Pavimentações. <br />
-                      - Requalificações..</p>
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção de torres de medição éolica e aerogeradores. <br />
+                    </p>
                     <div class="mbr-section-btn">
                       <a href="#" class="btn btn-warning display-4">Leia mais</a>
                     </div>
@@ -208,7 +235,31 @@ function Home() {
                 </div>
                 <div class="col-12 col-md-5">
                   <div class="img-wrapper">
-                    <img src={civil} alt="Construção Civil" />
+                    <img src={eolica} alt="Construção Civil" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="card-wrapper">
+              <div class="row">
+                <div class="col-12 col-md-7">
+                  <div class="text-wrapper">
+
+                    <h5 class="card-title mbr-fonts-style display-5">
+                      <strong>Aeroportos</strong>
+                    </h5>
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção de torres de medição éolica e aerogeradores. <br />
+                    </p>
+                    <div class="mbr-section-btn">
+                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-5">
+                  <div class="img-wrapper">
+                    <img src={aeroporto} alt="Construção Civil" />
                   </div>
                 </div>
               </div>

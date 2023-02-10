@@ -2,8 +2,6 @@
   "name": "real2023",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "realenergy.kinghost.net/realfront" ,
-
   "dependencies": {
     "@react-pdf-viewer/core": "3.7.0",
     "@react-pdf-viewer/default-layout": "^3.10.0",
@@ -12,6 +10,7 @@
     "@testing-library/user-event": "^13.2.1",
     "archiver-utils": "^2.1.0",
     "axios": "^1.2.3",
+    "cep-promise": "^4.3.0",
     "https": "^1.0.0",
     "https-browserify": "^1.0.0",
     "node-polyfill-webpack-plugin": "^2.0.1",
@@ -20,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "react-simple-cep-mask": "^0.1.4",
     "util": "^0.12.5",
     "web-vitals": "^2.1.0"
   },

@@ -51,18 +51,52 @@ function Home() {
 
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="card-wrapper">
-                            <div class="card-box align-left">
 
-                                <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action active">
-                                        Código de Conduta <br />
-                                    </a>
-                                    <a class="list-group-item list-group-item-action" onClick={() => setTopic(10)} >Política de Privacidade</a>
-                                    <a href="#" class="list-group-item list-group-item-action">Política de brindes e hospitalidades </a>
-                                    <a href="#" class="list-group-item list-group-item-action">Política de Relacionamento com o Poder Público</a>
+                    <section data-bs-version="5.1" class="content6 cid-tvpj4jo9VM" id="content6-1n">
+
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-12 col-lg-12">
+                                    <hr class="line" />
+                                    <h2>Ética e conduta</h2>
+                                    <p class="mbr-text align-left mbr-fonts-style my-4 display-7">A Real Energy tem sua atuação alinhada com o respeito à cultura e às leis vigentes do país em que atua e preocupação constante de atender às suas normas internas para preservar sua integridade.<br />Através de nossos colaboradores, agimos sempre com ética, idoneidade e transparência.<br />Conheça as nossas políticas que pautam nossas diretrizes, tomadas de decisões e o modo como nos relacionamos com a sociedade.&nbsp;<br /> </p>
+                                    <hr class="line" />
                                 </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <section data-bs-version="5.1" class="content6 cid-tvpj4jo9VM" id="content6-1o">
+
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-md-12 col-lg-12 mb-5">
+                                    <hr class="line" />
+                                    <h2>Nosso código de conduta</h2>
+                                    <p class="mbr-text align-left mbr-fonts-style my-4 display-7">&nbsp;O Código de Conduta da Real Energy deve servir como guia em todas a unidades, incluindo os locais de prestação de serviço onde colaboradores se fazem presente, para nortear as suas ações e relações com o público em geral com o qual mantém contato, tais como: colegas de trabalho, clientes, fornecedores, governo, parceiros de negócio, no tocante a atributos éticos, morais e legais.<br /></p>
+                                    <hr class="line" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <div class="col-12 col-lg-12">
+                        <div class="card-wrapper">
+                            <div class="card-box align-center">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
+                                    Código de conduta
+                                </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
+                                    Política de Privacidade
+                                </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
+                                    Política de Brindes e Hospitalidades
+                                </button>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left">
+                                    Politica de Relacionamento com o poder público
+                                </button>
 
                             </div>
                         </div>
@@ -78,6 +112,21 @@ function Home() {
 
 
                         </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section data-bs-version="5.1" class="content10 cid-tvpqjix1tk" id="content10-1r">
+
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md">
+
+                        <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">Canais de Comunicação&nbsp;</h6>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                        <p class="mbr-fonts-style display-7">Email:&nbsp;E-mail: denuncia@realenergy.com.br<br /><br />Faça uma denuncia anónima, <strong className="mbr-text-white">clique aqui !</strong></p>
                     </div>
                 </div>
             </div>

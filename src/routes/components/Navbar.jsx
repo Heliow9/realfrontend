@@ -26,7 +26,7 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li className="nav-item"><a className="nav-link link text-primary display-4" href='/'>Inicio</a></li>
-                        <li className="nav-item"><a className="nav-link link text-primary display-4" href='/'>Quem somos</a></li>
+                        <li className="nav-item"><a className="nav-link link text-primary display-4" href='/about'>Quem somos</a></li>
                         <li className="nav-item"><a className="nav-link link text-primary display-4" href='/etica'>Ética e Condutas</a></li>
                         <li className="nav-item"><a className="nav-link link text-primary display-4">Serviços</a></li>
                         <li className="nav-item dropdown">
@@ -34,7 +34,7 @@ function Navbar() {
                             <div className="dropdown-menu" aria-labelledby="dropdown-108">
                                 <a className="dropdown-item text-primary display-4">Fale Conosco</a>
                                 <a className="dropdown-item text-primary display-4">Trabalhe Conosco</a>
-                                <a className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a>
+                                <a href='/fornecedor' className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a>
                                
                               </div></li></ul>
                               
