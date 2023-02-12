@@ -34,7 +34,7 @@ function Navbar() {
                             <div className="dropdown-menu" aria-labelledby="dropdown-108">
                                 <a className="dropdown-item text-primary display-4">Fale Conosco</a>
                                 <a className="dropdown-item text-primary display-4">Trabalhe Conosco</a>
-                                <Link to='fornecedor'>  <a href='/fornecedor' className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a></Link>
+                                <Link to='/fornecedor'>  <a className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a></Link>
 
                             </div></li></ul>
 
