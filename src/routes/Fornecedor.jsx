@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Cep from "react-simple-cep-mask";
 import cep from 'cep-promise'
 import FornecedorForm from './components/forms/FornecedorForm';
-
+import Navbar from './components/Navbar';
 // import { Container } from './styles';
 
 function Fornecedor() {
@@ -24,6 +24,7 @@ function Fornecedor() {
     }
 
     return <div>
+                <Navbar />
         <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
             <div class="mbr-overlay" style={{
