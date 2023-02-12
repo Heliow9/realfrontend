@@ -12,6 +12,7 @@ import "../assets/mobirise/css/mbr-additional.css"
 import "../assets/mobirise/css/pdf.css"
 import "@react-pdf-viewer/default-layout/lib/styles/index.css"
 import "@react-pdf-viewer/core/lib/styles/index.css"
+import Navbar from './components/Navbar';
 import teste from '../assets/integridade.pdf'
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
@@ -24,6 +25,8 @@ function Home() {
     console.log(topic)
 
     return (<div>
+          <Navbar />
+        
         <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
             <div class="mbr-overlay" style={{

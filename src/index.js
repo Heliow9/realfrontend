@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home.jsx'
 import Etica from './routes/Etica.jsx'
 import About from './routes/About.jsx'
-import Navbar from './routes/components/Navbar';
 import Footer from './routes/components/Footer';
 import Fornecedor from './routes/Fornecedor';
 import Denuncia from './routes/Denuncia';
@@ -40,7 +39,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Navbar />
     <RouterProvider router={router} />
     <Footer />
   </React.StrictMode>

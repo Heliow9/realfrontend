@@ -25,19 +25,19 @@ function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                        <li className="nav-item"><a className="nav-link link text-primary display-4" href='/'>Inicio</a></li>
-                        <li className="nav-item"><a className="nav-link link text-primary display-4" href='/about'>Quem somos</a></li>
-                        <li className="nav-item"><a className="nav-link link text-primary display-4" href='/etica'>Ética e Condutas</a></li>
-                        <li className="nav-item"><a className="nav-link link text-primary display-4">Serviços</a></li>
+                        <Link to='/'>    <li className="nav-item"><a className="nav-link link text-primary display-4">Inicio</a></li></Link>
+                        <Link to='/about'>   <li className="nav-item"><a className="nav-link link text-primary display-4">Quem somos</a></li></Link>
+                        <Link to='/etica'>  <li className="nav-item"><a className="nav-link link text-primary display-4" >Ética e Condutas</a></li></Link>
+                        <Link to='#'> <li className="nav-item"><a className="nav-link link text-primary display-4">Serviços</a></li></Link>
                         <li className="nav-item dropdown">
                             <a className="nav-link link dropdown-toggle text-primary display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Contatos</a>
                             <div className="dropdown-menu" aria-labelledby="dropdown-108">
                                 <a className="dropdown-item text-primary display-4">Fale Conosco</a>
                                 <a className="dropdown-item text-primary display-4">Trabalhe Conosco</a>
-                                <a href='/fornecedor' className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a>
-                               
-                              </div></li></ul>
-                              
+                                <Link to='fornecedor'>  <a href='/fornecedor' className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a></Link>
+
+                            </div></li></ul>
+
 
                     <div className="navbar-buttons mbr-section-btn"><a className="btn btn-primary display-4" href="#"><span className="mobi-mbri mobi-mbri-user-2 mbr-iconfont mbr-iconfont-btn"></span>Painel Administrativo</a></div>
                 </div>
