@@ -275,16 +275,7 @@ function Home() {
 
     <SocialItens />
     
-    <div id="cb-cookie-banner" class="alert alert-cookies text-center mb-0" role="alert">
-🍪 <strong>Esse site usa cookies. </strong>Nós armazenamos dados temporariamente para melhorar a sua experiência de navegação e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com essa utilização. <br/> <a><u>Politica de Privacidade</u></a>
 
-<button type="button" class="btn btn-light btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
-Prosseguir
-</button>
-<button type="button" class="btn btn-light btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
-Reiejtar
-</button>
-</div>
 
 
   </div>

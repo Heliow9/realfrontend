@@ -30,7 +30,7 @@ function About() {
         <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
             <div class="mbr-overlay" style={{
-                opacity: 0.3,
+                opacity: 0.5,
                 background: "rgb(68, 121, 217)"
             }}></div>
 
