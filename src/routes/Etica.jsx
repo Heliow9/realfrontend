@@ -13,20 +13,25 @@ import "../assets/mobirise/css/pdf.css"
 import "@react-pdf-viewer/default-layout/lib/styles/index.css"
 import "@react-pdf-viewer/core/lib/styles/index.css"
 import Navbar from './components/Navbar';
-import teste from '../assets/integridade.pdf'
+import integridade from '../assets/integridade.pdf'
+import privacy from '../assets/privacidade.pdf'
+import brind from '../assets/brindes.pdf'
+import relashioship from '../assets/relashioship.pdf'
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 function Home() {
 
     const [topic, setTopic] = useState(null)
-    const [viewPDF, setViewPDF] = useState(teste);
-    const newPlugin = defaultLayoutPlugin()
-
+    const [viewPDF, setViewPDF] = useState(integridade);
+    const [privacidade, setPrivacidade] = useState(privacy);
+    const [brindes, setBrindes] = useState(brind);
+    const [relashion, setRelashioship] = useState(relashioship);
+    const newPlugin = defaultLayoutPlugin({ toolbarPlugin: {} })
     console.log(topic)
 
     return (<div>
-          <Navbar />
-        
+        <Navbar />
+
         <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
             <div class="mbr-overlay" style={{
@@ -86,36 +91,99 @@ function Home() {
 
 
                     <div class="col-12 col-lg-12">
-                        <div class="card-wrapper">
-                            <div class="card-box align-center">
-                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Tooltip on top">
-                                    Código de conduta
-                                </button>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">
-                                    Política de Privacidade
-                                </button>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip on bottom">
-                                    Política de Brindes e Hospitalidades
-                                </button>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left">
-                                    Politica de Relacionamento com o poder público
-                                </button>
 
+                        <div class="accordion" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                        Código de Conduta
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="accordion-body">
+
+                                        <div className="pdf-container">
+
+                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js" >
+                                                {viewPDF && <>
+                                                    <Viewer fileUrl={viewPDF} plugins={[newPlugin]} initialPage={topic} />
+
+                                                </>}
+                                            </Worker>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                        Politica de Privacidade
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div class="accordion-body">
+                                        <div className="pdf-container">
+
+                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js" >
+                                                {viewPDF && <>
+                                                    <Viewer fileUrl={privacidade} plugins={[newPlugin]} initialPage={topic} />
+
+                                                </>}
+                                            </Worker>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                        Política de Brindes e Hospitalidades
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <div className="pdf-container">
+
+                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js" >
+                                                {viewPDF && <>
+                                                    <Viewer fileUrl={brind} plugins={[newPlugin]} initialPage={topic} />
+
+                                                </>}
+                                            </Worker>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                        Política de Relacionamento com o poder público
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                                    <div class="accordion-body">
+                                        <div className="pdf-container">
+
+                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js" >
+                                                {viewPDF && <>
+                                                    <Viewer fileUrl={relashion} plugins={[newPlugin]} initialPage={topic} />
+
+                                                </>}
+                                            </Worker>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
+
+
                     </div>
-                    <div class="col-12 col-lg-12">
-                        <div className="pdf-container">
 
-                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js"  >
-                                {viewPDF && <>
-                                    <Viewer fileUrl={viewPDF} plugins={[newPlugin]} initialPage={topic} />
-                                </>}
-                            </Worker>
-
-
-                        </div>
-                    </div>
                 </div>
             </div>
 

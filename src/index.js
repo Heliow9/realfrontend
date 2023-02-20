@@ -9,6 +9,8 @@ import About from './routes/About.jsx'
 import Footer from './routes/components/Footer';
 import Fornecedor from './routes/Fornecedor';
 import Denuncia from './routes/Denuncia';
+import Servicos from './routes/Servicos';
+
 
 
 const router = createBrowserRouter([
@@ -31,7 +33,12 @@ const router = createBrowserRouter([
   {
     path: "/denuncia",
     element: <Denuncia />
+  },
+  {
+    path: "/servicos",
+    element: <Servicos />
   }
+
 
 ])
 

@@ -28,7 +28,7 @@ function Navbar() {
                         <Link to='/'>    <li className="nav-item"><a className="nav-link link text-primary display-4">Inicio</a></li></Link>
                         <Link to='/about'>   <li className="nav-item"><a className="nav-link link text-primary display-4">Quem somos</a></li></Link>
                         <Link to='/etica'>  <li className="nav-item"><a className="nav-link link text-primary display-4" >Ética e Condutas</a></li></Link>
-                        <Link to='#'> <li className="nav-item"><a className="nav-link link text-primary display-4">Serviços</a></li></Link>
+                        <Link to='/servicos'> <li className="nav-item"><a className="nav-link link text-primary display-4">Serviços</a></li></Link>
                         <li className="nav-item dropdown">
                             <a className="nav-link link dropdown-toggle text-primary display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Contatos</a>
                             <div className="dropdown-menu" aria-labelledby="dropdown-108">

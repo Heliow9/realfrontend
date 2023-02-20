@@ -18,7 +18,7 @@ import eolica from './assets/images/4.jpg'
 import aeroporto from './assets/images/6.jpg'
 
 
-function Home() {
+function Servicos() {
 
 
 
@@ -30,7 +30,7 @@ function Home() {
     <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
       <div class="mbr-overlay" style={{
-        opacity: 0.5,
+        opacity: 0.3,
         background: "rgb(68, 121, 217)"
       }}></div>
 
@@ -46,59 +46,6 @@ function Home() {
       </div>
     </section>
 
-    <section data-bs-version="5.1" class="features12 cid-tnY53ZOnEo" id="features13-n">
-
-
-
-
-
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-6">
-            <div class="card-wrapper">
-              <div class="card-box align-left">
-                <h4 class="card-title mbr-fonts-style mb-4 display-2">
-                  <strong>Quem somos?&nbsp;</strong></h4>
-                <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                  A RealEnergy é uma organização que foi constituída no ano de 1992 tendo como atividade principal a representação de materiais elétricos.</p>
-                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#"><span class="socicon socicon-bale mbr-iconfont mbr-iconfont-btn"></span>CONHEÇA</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-lg-6">
-            <div class="item mbr-flex">
-              <div class="icon-box">
-                <span class="mbr-iconfont mobi-mbri-setting mobi-mbri"></span>
-              </div>
-              <div class="text-box">
-                <h4 class="icon-title mbr-black mbr-fonts-style display-7"><strong>Obras em andamento</strong></h4>
-                <h5 class="icon-text mbr-black mbr-fonts-style display-4">Atualmente nos temos um total de 50 obras em andamento e temos excelência no que fazemos.</h5>
-              </div>
-            </div>
-            <div class="item mbr-flex">
-              <div class="icon-box">
-                <span class="mbr-iconfont mobi-mbri-map-pin mobi-mbri"></span>
-              </div>
-              <div class="text-box">
-                <h4 class="icon-title mbr-black mbr-fonts-style display-7">
-                  <strong>Fomos mais longe</strong></h4>
-                <h5 class="icon-text mbr-black mbr-fonts-style display-4">Atuamos em diversas regiões do território Brasileiro. Estamos mudando a vida das pessoas por meio de nossas obras nas regiões: Norte, Nordeste, Suldeste e Sul.</h5>
-              </div>
-            </div>
-            <div class="item mbr-flex">
-              <div class="icon-box">
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri"></span>
-              </div>
-              <div class="text-box">
-                <h4 class="icon-title mbr-black mbr-fonts-style display-7">
-                  <strong>Segurança</strong></h4>
-                <h5 class="icon-text mbr-black mbr-fonts-style display-4">Trabalhamos com os mais sofisticados equipamentos/treinamentos de segurança para garantir a melhor execução dos nossos serviços e a segurança de nossos colaboradores. </h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section data-bs-version="5.1" class="features4 cid-toLOfZtTw7" id="features5-s">
       <div class="container">
@@ -273,18 +220,6 @@ function Home() {
     </section>
 
 
-    <SocialItens />
-    
-    <div id="cb-cookie-banner" class="alert alert-cookies text-center mb-0" role="alert">
-🍪 <strong>Esse site usa cookies. </strong>Nós armazenamos dados temporariamente para melhorar a sua experiência de navegação e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com essa utilização. <br/> <a><u>Politica de Privacidade</u></a>
-
-<button type="button" class="btn btn-light btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
-Prosseguir
-</button>
-<button type="button" class="btn btn-light btn-sm ms-3" onclick="window.cb_hideCookieBanner()">
-Reiejtar
-</button>
-</div>
 
 
   </div>
@@ -294,4 +229,4 @@ Reiejtar
 
 
 
-export default Home;
+export default Servicos;
