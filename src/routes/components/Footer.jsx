@@ -14,6 +14,11 @@ function Footer() {
         cookieBanner.style.display = "none";
     }
 
+    function handlernotSet() {
+        let cookieBanner = document.getElementById("cb-cookie-banner");
+        cookieBanner.style.display = "none";
+    }
+
     useEffect(() => {
         async function getCookiesState() {
             const cookieState = await localStorage.getItem('cookiesHide')
@@ -81,16 +86,19 @@ function Footer() {
             </div>
         </div>
         {
-            cookiesHide ? <div id="cb-cookie-banner" class="alert alert-cookies text-center mb-0" role="alert">
-                🍪 <strong>Esse site usa cookies. </strong>Nós armazenamos dados temporariamente para melhorar a sua experiência de navegação e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com essa utilização. <br /> <a><u>Politica de Privacidade</u></a>
+            cookiesHide ?
+                <div id="cb-cookie-banner" class="alert alert-cookies text-center mb-0" role="alert">
+                    🍪 <strong>Esse site usa cookies. </strong>Nós armazenamos dados temporariamente para melhorar a sua experiência de navegação e recomendar conteúdo de seu interesse. Ao utilizar nossos serviços, você concorda com essa utilização. <br /> <a><u>Politica de Privacidade</u></a>
+                    <div className="buttonGroup">
+                        <button type="button" class="btn btn-light btn-sm ms-3" onClick={handletSetCookies}>
+                            Prosseguir
+                        </button>
+                        <button type="button" class="btn btn-light btn-sm ms-3" onClick={handlernotSet} >
+                            Rejeitar
+                        </button>
+                    </div>
 
-                <button type="button" class="btn btn-light btn-sm ms-3" onClick={handletSetCookies}>
-                    Prosseguir
-                </button>
-                <button type="button" class="btn btn-light btn-sm ms-3" >
-                    Reiejtar
-                </button>
-            </div> : null
+                </div> : null
 
         }
     </section>
