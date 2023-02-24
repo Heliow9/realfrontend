@@ -3495,6 +3495,10 @@ a {
 }
 
 
+.headerTitle{
+white-space: nowrap;
+}
+
 @media (min-width: 767px) {
 
 
