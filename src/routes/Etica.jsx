@@ -19,13 +19,10 @@ import brind from '../assets/brindes.pdf'
 import relashioship from '../assets/relashioship.pdf'
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
+import { AiOutlineDownload } from 'react-icons/ai'
 function Home() {
 
     const [topic, setTopic] = useState(null)
-    const [viewPDF, setViewPDF] = useState(integridade);
-    const [privacidade, setPrivacidade] = useState(privacy);
-    const [brindes, setBrindes] = useState(brind);
-    const [relashion, setRelashioship] = useState(relashioship);
     const newPlugin = defaultLayoutPlugin({ toolbarPlugin: {} })
     console.log(topic)
 
@@ -35,7 +32,7 @@ function Home() {
         <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
             <div class="mbr-overlay" style={{
-                opacity:  0.5,
+                opacity: 0.5,
                 background: "rgb(68, 121, 217)"
             }}></div>
 
@@ -99,21 +96,14 @@ function Home() {
                                         Código de Conduta
                                     </button>
                                 </h2>
-                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
                                     <div class="accordion-body">
 
                                         <div className="pdf-container">
-
-                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js" >
-                                                {viewPDF && <>
-                                                    <Viewer fileUrl={viewPDF} plugins={[newPlugin]} initialPage={topic} />
-
-                                                </>}
-                                            </Worker>
-
+                                            <iframe src="https://drive.google.com/file/d/1qUhBkScgDrxHwMUCODu6Bgck11jGIBX0/preview" width="640" height="100%" allow="autoplay"></iframe>
 
                                         </div>
-
+                                       <a href={integridade} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
                                     </div>
                                 </div>
                             </div>
@@ -126,14 +116,9 @@ function Home() {
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                                     <div class="accordion-body">
                                         <div className="pdf-container">
-
-                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.3.122/build/pdf.worker.min.js" >
-                                                {viewPDF && <>
-                                                    <Viewer fileUrl={privacidade} plugins={[newPlugin]} initialPage={topic} />
-
-                                                </>}
-                                            </Worker>
+                                            <iframe src="https://drive.google.com/file/d/1bXUecSFl4eAK1rIMPkvR7BdOgvIhWkzp/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
+                                        <a href={privacy} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
                                     </div>
                                 </div>
                             </div>
@@ -147,13 +132,9 @@ function Home() {
                                     <div class="accordion-body">
                                         <div className="pdf-container">
 
-                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js" >
-                                                {viewPDF && <>
-                                                    <Viewer fileUrl={brind} plugins={[newPlugin]} initialPage={topic} />
-
-                                                </>}
-                                            </Worker>
+                                            <iframe src="https://drive.google.com/file/d/1r1bR_G2i_az3-Oz8HmwV9sp31UpTgx9Y/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
+                                        <a href={brind} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
                                     </div>
                                 </div>
                             </div>
@@ -166,15 +147,9 @@ function Home() {
                                 <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                                     <div class="accordion-body">
                                         <div className="pdf-container">
-
-                                            <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.15.349/build/pdf.worker.min.js" >
-                                                {viewPDF && <>
-                                                    <Viewer fileUrl={relashion} plugins={[newPlugin]} initialPage={topic} />
-
-                                                </>}
-                                            </Worker>
+                                            <iframe src="https://drive.google.com/file/d/1iNE56p8gJRWZzqjJn5RzTgQcYGe28kh5/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
-
+                                        <a href={relashioship} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
                                     </div>
                                 </div>
                             </div>
