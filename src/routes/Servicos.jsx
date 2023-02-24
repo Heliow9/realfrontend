@@ -16,6 +16,7 @@ import iluminacao from './assets/images/2.png'
 import transmissao from './assets/images/3.jpg'
 import eolica from './assets/images/4.jpg'
 import aeroporto from './assets/images/6.jpg'
+import Footer from './components/Footer';
 
 
 function Servicos() {
@@ -220,7 +221,7 @@ function Servicos() {
     </section>
 
 
-
+    <Footer />
 
   </div>
   )

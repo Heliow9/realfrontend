@@ -1,20 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import Cep from "react-simple-cep-mask";
-import cep from 'cep-promise'
-import FornecedorForm from './components/forms/FornecedorForm';
+import React, { useEffect } from 'react';
+import "../assets/web/assets/mobirise-icons2/mobirise2.css"
+import "../assets/bootstrap/css/bootstrap.min.css"
+import "../assets/bootstrap/css/bootstrap-grid.min.css"
+import "../assets/bootstrap/css/bootstrap-reboot.min.css"
+import "../assets/parallax/jarallax.css"
+import "../assets/web/assets/gdpr-plugin/gdpr-styles.css"
+import "../assets/dropdown/css/style.css"
+import "../assets/socicon/css/styles.css"
+import "../assets/theme/css/style.css"
+import "../assets/mobirise/css/mbr-additional.css"
+import Navbar from './components/Navbar';
 import DenunciaForm from './components/forms/DenunciaForm';
+import Footer from './components/Footer';
 
-// import { Container } from './styles';
 
-function Fornecedor() {
-    
 
-    
-    return <div>
+function Denuncia() {
+
+    return (<div>
+
+
+        <Navbar />
         <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
             <div class="mbr-overlay" style={{
-                opacity:  0.5,
+                opacity: 0.5,
                 background: "rgb(68, 121, 217)"
             }}></div>
 
@@ -30,9 +40,16 @@ function Fornecedor() {
             </div>
         </section>
 
+
         <DenunciaForm />
 
+        <Footer />
+
     </div>
+    )
 }
 
-export default Fornecedor;
+
+
+
+export default Denuncia;

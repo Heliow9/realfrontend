@@ -2,14 +2,14 @@ import React from 'react';
 
 // import { Container } from './styles';
 
-function DenunciaForm() {
+function ContactForm() {
     return <section data-bs-version="5.1" class="form5 cid-twHiEKrqNg" id="form5-1v">
 
 
         <div class="container">
             <div class="mbr-section-head">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                    <strong>Canal de Denuncias</strong>
+                    <strong>Fale Conosco</strong>
                 </h3>
 
             </div>
@@ -64,4 +64,4 @@ function DenunciaForm() {
     </section>
 }
 
-export default DenunciaForm;
+export default ContactForm;

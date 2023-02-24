@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 // import { Container } from './styles';
 
 function Footer() {
@@ -38,9 +38,9 @@ function Footer() {
                     <div class="row row-links">
                         <ul class="foot-menu">
 
-                            <li class="foot-menu-item mbr-fonts-style display-7">Quem Somos</li>
-                            <li class="foot-menu-item mbr-fonts-style display-7">Contato</li>
-                            <li class="foot-menu-item mbr-fonts-style display-7">Denuncias</li>
+                            <li class="foot-menu-item mbr-fonts-style display-7"><Link to="/about#image2-10" style={{ color: 'white' }}>Quem Somos</Link></li>
+                            <li class="foot-menu-item mbr-fonts-style display-7"><Link to="/contato" style={{ color: 'white' }}>Contato</Link></li>
+                            <li class="foot-menu-item mbr-fonts-style display-7"><Link to="/denuncia#form5-1v" style={{ color: 'white' }}>Denuncias</Link></li>
 
 
                         </ul>

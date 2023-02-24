@@ -6,10 +6,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home.jsx'
 import Etica from './routes/Etica.jsx'
 import About from './routes/About.jsx'
-import Footer from './routes/components/Footer';
 import Fornecedor from './routes/Fornecedor';
 import Denuncia from './routes/Denuncia';
 import Servicos from './routes/Servicos';
+import Contact from './routes/Contact';
 
 
 
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
   {
     path: "/servicos",
     element: <Servicos />
+  },
+  {
+    path: "/contato",
+    element: <Contact />
   }
 
 
@@ -47,7 +51,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
-    <Footer />
+    
   </React.StrictMode>
 );
 

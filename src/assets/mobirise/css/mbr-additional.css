@@ -3475,6 +3475,11 @@ a {
     
   }
 
+  .cid-twHiEKrqNg textarea{
+  height: 220px;
+}
+
+
 }
 
 #cb-cookie-banner { position: fixed; bottom: 0; left: 0; width: 100%; z-index: 999; border-radius: 0;  }
@@ -3483,6 +3488,12 @@ a {
   background-color: #4479d9;
   font-size: 15px;
 }
+
+.cid-twHiEKrqNg{
+ padding-top: 80px;
+ padding-bottom: 55px;
+}
+
 
 @media (min-width: 767px) {
 

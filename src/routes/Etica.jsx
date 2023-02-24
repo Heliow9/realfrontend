@@ -20,6 +20,8 @@ import relashioship from '../assets/relashioship.pdf'
 import { Viewer, Worker } from '@react-pdf-viewer/core';
 import { defaultLayoutPlugin } from '@react-pdf-viewer/default-layout'
 import { AiOutlineDownload } from 'react-icons/ai'
+import { Link } from "react-router-dom";
+import Footer from "./components/Footer";
 function Home() {
 
     const [topic, setTopic] = useState(null)
@@ -103,7 +105,7 @@ function Home() {
                                             <iframe src="https://drive.google.com/file/d/1qUhBkScgDrxHwMUCODu6Bgck11jGIBX0/preview" width="640" height="100%" allow="autoplay"></iframe>
 
                                         </div>
-                                       <a href={integridade} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
+                                        <a href={integridade} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -118,7 +120,7 @@ function Home() {
                                         <div className="pdf-container">
                                             <iframe src="https://drive.google.com/file/d/1bXUecSFl4eAK1rIMPkvR7BdOgvIhWkzp/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
-                                        <a href={privacy} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
+                                        <a href={privacy} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -134,7 +136,7 @@ function Home() {
 
                                             <iframe src="https://drive.google.com/file/d/1r1bR_G2i_az3-Oz8HmwV9sp31UpTgx9Y/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
-                                        <a href={brind} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
+                                        <a href={brind} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +151,7 @@ function Home() {
                                         <div className="pdf-container">
                                             <iframe src="https://drive.google.com/file/d/1iNE56p8gJRWZzqjJn5RzTgQcYGe28kh5/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
-                                        <a href={relashioship} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload  size={20}/> Baixar</button></a> 
+                                        <a href={relashioship} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -172,14 +174,14 @@ function Home() {
                         <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">Canais de Comunicação&nbsp;</h6>
                     </div>
                     <div class="col-md-12 col-lg-4">
-                        <p class="mbr-fonts-style display-7">Email:&nbsp;E-mail: denuncia@realenergy.com.br<br /><br />Faça uma denuncia anónima, <strong className="mbr-text-white">clique aqui !</strong></p>
+                        <p class="mbr-fonts-style display-7">Email:&nbsp;E-mail: denuncia@realenergy.com.br<br /><br />Faça uma denuncia anónima, <strong className="mbr-text-white"><Link to="/denuncia#form5-1v">clique aqui !</Link></strong></p>
                     </div>
                 </div>
             </div>
         </section>
 
 
-
+        <Footer />
     </div>
     )
 }
