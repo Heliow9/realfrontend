@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // import { Container } from './styles';
 
 function DenunciaForm() {
+
+    const [stateIdentification, setIdentificationState] = useState(false)
+
+
     return <section data-bs-version="5.1" class="form5 cid-twHiEKrqNg" id="form5-1v">
 
 
@@ -23,9 +27,19 @@ function DenunciaForm() {
                             </div>
                         </div>
                         <div class="dragArea row">
-                            <div class="col-md col-sm-12 form-group mb-3" data-for="name">
-                                <input type="text" name="name" placeholder="Nome" data-form-field="name" class="form-control" value="" id="name-form5-1v" />
+                            <div class="col-md col-sm-12 form-group mb-6" data-for="name">
+                                <div class="form-check form-switch ">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Deseja se identificar?</label>
+                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onChange={(e) => setIdentificationState(!stateIdentification)} />
+                                </div>
                             </div>
+                            {
+                                stateIdentification ? <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+
+                                    <input type="text" name="name" placeholder="Nome" data-form-field="name" class="form-control" value="" id="name-form5-1v" />
+                                </div> :
+                                    null
+                            }
                             <div class="col-md col-sm-12 form-group mb-3" data-for="email">
                                 <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form5-1v" />
                             </div>
