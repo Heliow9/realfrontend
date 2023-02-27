@@ -3479,6 +3479,17 @@ a {
     height: 220px;
   }
 
+  .headerTitle {
+
+    white-space: nowrap;
+    font-size: 39pt;
+    font-size: "Open Sans", sans-serif !important;
+    font-weight: bold;
+    font-style: italic;
+    opacity: 0.9 !important;
+    color: #626033 !important;
+    mix-blend-mode: color-dodge;
+  }
 
 }
 
@@ -3512,7 +3523,6 @@ a {
 .headerTitle {
 
   white-space: nowrap;
-  font-size: 39pt;
   font-size: "Open Sans", sans-serif !important;
   font-weight: bold;
   font-style: italic;
