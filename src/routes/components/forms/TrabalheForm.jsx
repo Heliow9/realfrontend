@@ -11,12 +11,15 @@ function TrabalheForm() {
         <div class="container">
             <div class="mbr-section-head">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                    <strong>Canal de Denuncias</strong>
+                    <strong>Trabalhe Conosco</strong>
                 </h3>
+              
 
             </div>
             <div class="row justify-content-center mt-4">
+                
                 <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+                <p>Faça parte do nosso time e ajude a REAL ENERGY a ser cada vez melhor! Para se candidatar a uma vaga, preencha o formulário abaixo.</p>
                     <form class="mbr-form form-with-styler" data-form-title="Form Name">
 
                         <div class="row">
@@ -57,7 +60,7 @@ function TrabalheForm() {
 
                             <div class="col-12 form-group mb-3" data-for="url">
                                 <label htmlFor="" className='form-label' >Anexar Curriculo: </label>
-                                <input type="file" accept='application/pdf,application' name="url" placeholder="exemplo@mail.com.br" data-form-field="url" class="form-control" value="" id="url-form5-1v" />
+                                <input type="file" accept='application/pdf,application' name="url"class="form-control" />
                             </div>
                             <div class="col-12 form-group mb-3" data-for="textarea">
                                 <textarea name="textarea" placeholder="Observação" data-form-field="textarea" class="form-control" id="textarea-form5-1v"></textarea>
