@@ -3531,4 +3531,9 @@ a {
   mix-blend-mode: color-dodge;
 }
 
-@media (min-width: 767px) {}
+@media screen and (max-width: 600px){
+  .labelcontrol{
+    display: 'flex';
+    flex-direction: column;
+  }
+}

@@ -10,6 +10,7 @@ import Fornecedor from './routes/Fornecedor';
 import Denuncia from './routes/Denuncia';
 import Servicos from './routes/Servicos';
 import Contact from './routes/Contact';
+import TrabalheConosco from './routes/TrabalheConosco';
 
 
 
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
   {
     path: "/contato",
     element: <Contact />
-  }
+  },
+  {
+    path: "/trabalheconosco",
+    element: <TrabalheConosco />
+  },
 
 
 ])

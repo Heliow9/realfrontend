@@ -33,7 +33,7 @@ function Navbar() {
                             <a className="nav-link link dropdown-toggle text-primary display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Contatos</a>
                             <div className="dropdown-menu" aria-labelledby="dropdown-108">
                               <Link to='/contato#form5-1v'> <a className="dropdown-item text-primary display-4">Fale Conosco</a></Link> 
-                                <a className="dropdown-item text-primary display-4">Trabalhe Conosco</a>
+                                <Link to="/trabalheconosco"><a className="dropdown-item text-primary display-4">Trabalhe Conosco</a></Link>
                                 <Link to='/fornecedor'>  <a className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a></Link>
 
                             </div></li></ul>

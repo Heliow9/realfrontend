@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 function DenunciaForm() {
 
     const [stateIdentification, setIdentificationState] = useState(false)
+    const [relashionType, setRelashiontype] = useState(false)
 
 
     return <section data-bs-version="5.1" class="form5 cid-twHiEKrqNg" id="form5-1v">
@@ -20,7 +21,7 @@ function DenunciaForm() {
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
                     <form class="mbr-form form-with-styler" data-form-title="Form Name">
-                        
+
                         <div class="row">
                             <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
                             <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
@@ -41,7 +42,7 @@ function DenunciaForm() {
                                 </div> :
                                     null
                             }
-                          
+
                             <div class="col-md col-sm-12 form-group mb-3" data-for="email">
                                 <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form5-1v" />
                             </div>
@@ -73,16 +74,33 @@ function DenunciaForm() {
                                     <option value="3">Outros</option>
                                 </select>
                             </div>
+                            <div class="col-12 form-group mb-3" data-for="url">
+
+                                <select class="form-control" aria-label="Default select example">
+                                    <option selected disabled>Relação do denunciado com a empresa:</option>
+                                    <option value="1">Coloborador Ativo</option>
+                                    <option value="2">Ex-Colaborador</option>
+                                    <option value="1">Cliente</option>
+                                    <option value="1">Fornecedor ou prestador de serviços</option>
+                                    <option value="1">Outros</option>
+                                </select>
+                            </div>
 
 
                             <div class="col-12 form-group mb-3" data-for="url">
                                 <input type="url" name="url" placeholder="exemplo@mail.com.br" data-form-field="url" class="form-control" value="" id="url-form5-1v" />
                             </div>
                             <div class="col-12 form-group mb-3" data-for="textarea">
-                                <textarea name="textarea" placeholder="Mensagem" data-form-field="textarea" class="form-control" id="textarea-form5-1v"></textarea>
+                                <textarea name="textarea" placeholder="Descreva abaixo seu relato, com o máximo de informações possíveis
+   	• O quê (descrição da situação)
+   	• Quem (nome das pessoas envolvidas, inclusive testemunhas caso existam)
+   	• Quando (data em que aconteceu, acontece ou acontecerá a situação)
+   	• Porquê (a causa ou motivo)
+   	• Quanto (se houver informação de valores)
+" data-form-field="textarea" class="form-control" id="textarea-form5-1v"></textarea>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                                <button type="submit" class="btn btn-primary display-4">Enviar</button>
+                                <button type="submit" class="btn btn-primary display-4">Enviar Denúncia</button>
                             </div>
                         </div>
                         <span class="gdpr-block">

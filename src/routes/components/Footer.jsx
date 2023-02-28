@@ -48,22 +48,9 @@ function Footer() {
                     <div class="social-list align-right pb-2 socialflex" >
 
                         <div class="soc-item">
-                            <a href="https://instagram.com/mobirise" target="_blank">
+                            <a href="https://instagram.com/energyreal" target="_blank">
                                 <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon"></span>
                             </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
-                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div class="soc-item">
-                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
-                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
-                            </a>
-                        </div>
-                        <div>
-
                         </div>
 
 
@@ -77,9 +64,9 @@ function Footer() {
                 <br />
                 <div class="row row-links">
                     <ul class="foot-menu">
-                        <li class="foot-menu-item mbr-fonts-style display-7">Termos de uso</li>
-                        <li class="foot-menu-item mbr-fonts-style display-7">Política de Privacidade</li>
-                        <li class="foot-menu-item mbr-fonts-style display-7">Política de Cookies</li>
+                        <Link to='/etica'><li class="foot-menu-item mbr-fonts-style display-7" style={{ color: 'white' }}>Termos de uso</li></Link>
+                        <Link to='/etica'><li class="foot-menu-item mbr-fonts-style display-7" style={{ color: 'white' }}>Política de Privacidade</li></Link>
+                        <Link to='/etica'><li class="foot-menu-item mbr-fonts-style display-7" style={{ color: 'white' }}>Política de Cookies</li></Link>
 
                     </ul>
                 </div>

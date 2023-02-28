@@ -174,7 +174,7 @@ function Home() {
                         <h6 class="mbr-section-subtitle mbr-fonts-style mb-4 display-5">Canais de Comunicação&nbsp;</h6>
                     </div>
                     <div class="col-md-12 col-lg-4">
-                        <p class="mbr-fonts-style display-7">Email:&nbsp;E-mail: denuncia@realenergy.com.br<br /><br />Faça uma denuncia anónima, <strong className="mbr-text-white"><Link to="/denuncia#form5-1v">clique aqui !</Link></strong></p>
+                        <p class="mbr-fonts-style display-7">E-mail: denuncia@realenergy.com.br<br /><br />Faça uma denúncia anônima, <strong className="mbr-text-white"><Link to="/denuncia#form5-1v">clique aqui !</Link></strong></p>
                     </div>
                 </div>
             </div>
