@@ -12,8 +12,8 @@ function SectionScreen() {
 
         <div class="align-center container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-6">
-                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2 headerText"><strong>Somos a Real Energy,30 anos de gestão no Brasil.</strong></h1>
+                <div class="col-12 col-lg-8">
+                    <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2 headerText"><strong>Somos a Real Energy,<br />30 anos de gestão no Brasil.</strong></h1>
 
 
                     <br /><br />
