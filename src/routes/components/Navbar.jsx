@@ -10,7 +10,7 @@ function Navbar() {
                 <div className="navbar-brand">
                     <span className="navbar-logo">
                         <Link to="/">
-                        <img src="assets/images/logo-real-energy-121x45.png" alt="Mobirise Website Builder" />
+                        <img src="assets/images/logo-real-energy-121x45.png" alt="Logo azul com nome realenergy serrilhado" />
                         </Link>
                     </span>
 
