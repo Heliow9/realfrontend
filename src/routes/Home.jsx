@@ -17,6 +17,7 @@ import transmissao from './assets/images/3.jpg'
 import eolica from './assets/images/4.jpg'
 import aeroporto from './assets/images/6.jpg'
 import Footer from '../routes/components/Footer'
+import SectionScreen from './components/SectionScreen';
 
 function Home() {
 
@@ -27,26 +28,7 @@ function Home() {
 
 
     <Navbar />
-    <section data-bs-version="5.1" class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
-
-      <div class="mbr-overlay" style={{
-        opacity: 0.5,
-        background: "rgb(68, 121, 217)"
-      }}></div>
-
-      <div class="align-center container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-6">
-            <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2 headerText"><strong>Somos a Real Energy,30 anos de gestão no Brasil.</strong></h1>
-
-            
-            <br /><br />
-            <h1 class="mbr-section-title mbr-fonts-style mb-3 display-2 headerTitle"><strong>Inovando e fazendo história.</strong></h1>
-            <p class="mbr-text mbr-fonts-style display-7"><strong>Pensamos em um mundo mais limpo, conectamos energia com pessoas.</strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <SectionScreen />
 
     <section data-bs-version="5.1" class="features12 cid-tnY53ZOnEo" id="features13-n">
 
@@ -276,10 +258,10 @@ function Home() {
 
 
     <SocialItens />
-    
 
 
-      <Footer />
+
+    <Footer />
 
   </div>
   )
