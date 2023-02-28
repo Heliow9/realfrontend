@@ -43,7 +43,7 @@ function TrabalheForm() {
                             <div class="col-12 form-group mb-3" data-for="url">
 
                                 <select class="form-control" aria-label="Default select example">
-                                    <option selected disabled>Tipo da ocorrência:</option>
+                                    <option selected disabled>Cargos</option>
                                     <option value="1">Cargos</option>
 
                                 </select>
