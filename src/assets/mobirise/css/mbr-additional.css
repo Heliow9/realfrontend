@@ -3531,9 +3531,18 @@ a {
   mix-blend-mode: color-dodge;
 }
 
+
+.aboutHader{
+ padding-top: 88px;
+}
+
 @media screen and (max-width: 600px){
   .labelcontrol{
     display: 'flex';
     flex-direction: column;
+  }
+
+  .headerTitle{
+    font-size: 1.6em;
   }
 }

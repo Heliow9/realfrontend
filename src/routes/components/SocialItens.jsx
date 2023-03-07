@@ -72,11 +72,7 @@ function SocialItens() {
                     )
                 } */}
 
-                <iframe src="//lightwidget.com/widgets/185c5c0244ee5ab380e9b8f3709c637d.html"
-                    scrolling="no"
-                    allowtransparency="true"
-                    class="lightwidget-widget"
-                    className='instagram-integer'></iframe>
+                <div class="powr-instagram-feed" id="f7aadcae_1677766814"></div>
 
             </div>
         </div>
