@@ -6,7 +6,7 @@ function DenunciaForm() {
 
     const [stateIdentification, setIdentificationState] = useState(false)
     const [relashionType, setRelashiontype] = useState(false)
-
+    const [denunciado, setDenunciado] = useState('colaborador ativo')
 
     return <section data-bs-version="5.1" class="form5 cid-twHiEKrqNg" id="form5-1v">
 
@@ -14,7 +14,7 @@ function DenunciaForm() {
         <div class="container">
             <div class="mbr-section-head">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                    <strong>Canal de Denuncias</strong>
+                    <strong>Canal de Denúncias</strong>
                 </h3>
 
             </div>
@@ -30,22 +30,25 @@ function DenunciaForm() {
                         </div>
                         <div class="dragArea row">
                             <div class="col-md col-sm-12 form-group mb-6" data-for="name">
-                                <div class="form-check form-switch ">
-                                    <label class="form-check-label" for="flexSwitchCheckChecked">Deseja se identificar?</label>
+                                <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onChange={(e) => setIdentificationState(!stateIdentification)} />
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Você deseja se identificar ?</label>
                                 </div>
                             </div>
                             {
-                                stateIdentification ? <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                                stateIdentification ? <>
+                                    <div class="col-md col-sm-12 form-group mb-3" data-for="name">
 
-                                    <input type="text" name="name" placeholder="Nome" data-form-field="name" class="form-control" value="" id="name-form5-1v" />
-                                </div> :
+                                        <input type="text" name="name" placeholder="Nome" data-form-field="name" class="form-control" value="" id="name-form5-1v" />
+                                    </div>
+                                    <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                                        <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form5-1v" />
+                                    </div>
+                                </> :
                                     null
                             }
 
-                            <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-                                <input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form5-1v" />
-                            </div>
+
                             <div class="col-12 form-group mb-3" data-for="url">
 
                                 <select class="form-control" aria-label="Default select example">
@@ -76,28 +79,34 @@ function DenunciaForm() {
                             </div>
                             <div class="col-12 form-group mb-3" data-for="url">
 
-                                <select class="form-control" aria-label="Default select example">
+                                <select class="form-control" aria-label="Default select example" onChange={event => setDenunciado(event.target.value)}>
                                     <option selected disabled>Relação do denunciado com a empresa:</option>
-                                    <option value="1">Coloborador Ativo</option>
-                                    <option value="2">Ex-Colaborador</option>
-                                    <option value="1">Cliente</option>
-                                    <option value="1">Fornecedor ou prestador de serviços</option>
-                                    <option value="1">Outros</option>
+                                    <option value="colaborador ativo">Coloborador Ativo</option>
+                                    <option value="ex colaborador">Ex-Colaborador</option>
+                                    <option value="cliente">Cliente</option>
+                                    <option value="fornecedor ou prestador">Fornecedor ou prestador de serviços</option>
+                                    <option value="outros">Outros</option>
                                 </select>
                             </div>
 
 
                             <div class="col-12 form-group mb-3" data-for="url">
-                                <input type="url" name="url" placeholder="exemplo@mail.com.br" data-form-field="url" class="form-control" value="" id="url-form5-1v" />
+                                <input type="url" name="url" placeholder={`nome do ${denunciado}`} data-form-field="url" class="form-control" value="" id="url-form5-1v" />
                             </div>
-                            <div class="col-12 form-group mb-3" data-for="textarea">
-                                <textarea name="textarea" placeholder="Descreva abaixo seu relato, com o máximo de informações possíveis
-   	• O quê (descrição da situação)
-   	• Quem (nome das pessoas envolvidas, inclusive testemunhas caso existam)
-   	• Quando (data em que aconteceu, acontece ou acontecerá a situação)
-   	• Porquê (a causa ou motivo)
-   	• Quanto (se houver informação de valores)
-" data-form-field="textarea" class="form-control" id="textarea-form5-1v"></textarea>
+                            <div class="col-12 form-group mb-3" >
+                                <textarea name="textarea" class="form-control textArea">
+
+                                    Descreva abaixo seu relato, com o máximo de informações possíveis
+                                    O quê (descrição da situação)
+                                    "\n"
+                                    Quem (nome das pessoas envolvidas, inclusive testemunhas caso existam)
+                                    "\n"
+                                    Quando (data em que aconteceu, acontece ou acontecerá a situação)
+                                    "\n"
+                                    Porquê (a causa ou motivo)
+
+                                    Quanto (se houver informação de valores)
+                                </textarea>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
                                 <button type="submit" class="btn btn-primary display-4">Enviar Denúncia</button>

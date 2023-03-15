@@ -33,7 +33,7 @@ function FornecedorForm() {
         <div class="container-fluid">
             <div class="mbr-section-head">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-2 display-2">
-                    <strong>FORNECEDOR, REALIZE O SEU PRÉ-CADASTRO</strong>
+                    <h3>FORNECEDOR, REALIZE O SEU PRÉ-CADASTRO</h3>
                 </h3>
 
             </div>
@@ -42,7 +42,7 @@ function FornecedorForm() {
                     <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler mx-auto"
                         data-form-title="Form Name">
                         <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">
-                            O pré-cadastro de fornecedores permite que a REALENERGY conheça a área de atuação da sua
+                            O pré-cadastro de fornecedores permite que a REAL ENERGY conheça a área de atuação da sua
                             empresa, principais produtos e serviços prestados, e possa convida-lo a parcicipar de um
                             processo de concorrencial, de acordo com suas demandas.
                         </p>
@@ -57,18 +57,18 @@ function FornecedorForm() {
 
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="cnpj">
                                 <label for="cnpj">*Razão social</label>
-                                <input type="text" name="cnpj" placeholder="Razão Social" data-form-field="cnpj"
+                                <input required type="text" name="cnpj" placeholder="Razão Social" data-form-field="cnpj"
                                     class="form-control" id="email-form7-1k" />
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="cnpj">
                                 <label for="cnpj">*CNPJ</label>
-                                <input type="text" name="cnpj" placeholder="cnpj" data-form-field="cnpj"
+                                <input required type="text" name="cnpj" placeholder="cnpj" data-form-field="cnpj"
                                     class="form-control" id="email-form7-1k" />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Email">*Email</label>
-                                <input type="text" name="Email" placeholder="Email" data-form-field="Email"
+                                <input required type="text" name="Email" placeholder="Email" data-form-field="Email"
                                     class="form-control" id="phone-form7-1k" />
                             </div>
 
@@ -99,36 +99,36 @@ function FornecedorForm() {
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Endereco">*Endereço</label>
-                                <input type="text" name="endereco" placeholder="endereco" data-form-field="endereco"
+                                <input required type="text" name="endereco" placeholder="endereco" data-form-field="endereco"
                                     class="form-control" id="phone-form7-1k" value={endereco} disabled />
                             </div>
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Endereco">*Bairro</label>
-                                <input type="text" name="endereco" placeholder="bairro" data-form-field="endereco"
+                                <input required type="text" name="endereco" placeholder="bairro" data-form-field="endereco"
                                     class="form-control" id="phone-form7-1k" value={bairro} disabled />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="numero">*Numero</label>
-                                <input type="text" name="numero" placeholder="numero" data-form-field="endereco"
+                                <input required type="text" name="numero" placeholder="numero" data-form-field="endereco"
                                     class="form-control" id="phone-form7-1k" />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="cidade">*Cidade</label>
-                                <input type="text" name="cidade" placeholder="cidade" data-form-field="cidade"
+                                <input required type="text" name="cidade" placeholder="cidade" data-form-field="cidade"
                                     class="form-control" id="phone-form7-1k" value={cidade} disabled />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="complemento">Complemento</label>
-                                <input type="text" name="complemento" placeholder="complemento"
+                                <input required type="text" name="complemento" placeholder="complemento"
                                     data-form-field="complemento" class="form-control" id="phone-form7-1k" />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="pais">Pais</label>
-                                <input type="text" name="pais" placeholder="pais" data-form-field="pais"
+                                <input required type="text" name="pais" placeholder="pais" data-form-field="pais"
                                     class="form-control" id="phone-form7-1k" value='Brazil' disabled />
                             </div>
 
@@ -308,7 +308,7 @@ function FornecedorForm() {
                         <span class="gdpr-block">
                             <label>
                                 <span class="textGDPR display-7" style={{ color: '#a7a7a7' }}><input type="checkbox"
-                                    name="gdpr" id="gdpr-form7-1k" required="" />Eu concordo com os termos de serviços <a
+                                    name="gdpr" id="gdpr-form7-1k" required />Eu concordo com os termos de serviços <a
                                         style={{ color: '#149dcc', }} href="terms.html">Termos e serviços</a> e com a  <a style={{ color: '#149cc', textDecoration: 'none' }}
                                             href="policy.html">Política de Privacidade</a>.</span>
                             </label>

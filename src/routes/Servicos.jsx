@@ -49,9 +49,7 @@ function Servicos() {
                       - Construções. <br />
                       - Construção. <br />
                       - Ampliação de sistemas de distribuição de agua e esgotamento sanitário.</p>
-                    <div class="mbr-section-btn">
-                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
-                    </div>
+                   
                   </div>
                 </div>
                 <div class="col-12 col-md-5">
@@ -77,9 +75,7 @@ function Servicos() {
                       - Monitoramento de adultoras e bombas para sistemas de distribuição de água.<br />
 
                     </p>
-                    <div class="mbr-section-btn">
-                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
-                    </div>
+                   
                   </div>
                 </div>
                 <div class="col-12 col-md-5">
@@ -105,9 +101,7 @@ function Servicos() {
                       - Manutenção. <br />
                       - Construção e ampliação de linhas de transmissão de 69kv até 500kv. <br />
                     </p>
-                    <div class="mbr-section-btn">
-                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
-                    </div>
+                    
                   </div>
                 </div>
                 <div class="col-12 col-md-5">
@@ -134,9 +128,7 @@ function Servicos() {
                       - Iluminação Industrial.<br />
                       - Iluminação Predial.<br />
                     </p>
-                    <div class="mbr-section-btn">
-                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
-                    </div>
+                  
                   </div>
                 </div>
                 <div class="col-12 col-md-5">
@@ -160,9 +152,7 @@ function Servicos() {
                     </h5>
                     <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção de torres de medição éolica e aerogeradores. <br />
                     </p>
-                    <div class="mbr-section-btn">
-                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
-                    </div>
+                   
                   </div>
                 </div>
                 <div class="col-12 col-md-5">
@@ -182,11 +172,8 @@ function Servicos() {
                     <h5 class="card-title mbr-fonts-style display-5">
                       <strong>Aeroportos</strong>
                     </h5>
-                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção de torres de medição éolica e aerogeradores. <br />
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção completa das engenharias de aeroportos. <br />
                     </p>
-                    <div class="mbr-section-btn">
-                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
-                    </div>
                   </div>
                 </div>
                 <div class="col-12 col-md-5">

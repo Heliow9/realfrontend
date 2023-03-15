@@ -3546,3 +3546,19 @@ a {
     font-size: 1.6em;
   }
 }
+
+.text-Orientation{
+  text-align: justify !important;
+
+}
+.text-Orientation-center{
+  text-align: center;
+}
+.textArea{
+  text-align: justify;
+
+}
+
+.redInputFocus input:focus {
+    outline-color: red !important;
+}

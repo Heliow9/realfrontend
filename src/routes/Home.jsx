@@ -18,7 +18,7 @@ import eolica from './assets/images/4.jpg'
 import aeroporto from './assets/images/6.jpg'
 import Footer from '../routes/components/Footer'
 import SectionScreen from './components/SectionScreen';
-
+import { Link } from "react-router-dom";
 function Home() {
 
 
@@ -45,7 +45,7 @@ function Home() {
                   <strong>Quem somos?&nbsp;</strong></h4>
                 <p class="mbr-text mbr-fonts-style mb-4 display-7">
                   A RealEnergy é uma organização que foi constituída no ano de 1992 tendo como atividade principal a representação de materiais elétricos.</p>
-                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#"><span class="socicon socicon-bale mbr-iconfont mbr-iconfont-btn"></span>CONHEÇA</a></div>
+                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#"><span class="socicon socicon-bale mbr-iconfont mbr-iconfont-btn"></span><Link to="/about" style={{color:"white"}}>CONHEÇA</Link></a></div>
               </div>
             </div>
           </div>

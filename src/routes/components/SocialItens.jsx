@@ -27,7 +27,7 @@ function SocialItens() {
 
         <div class="container">
             <div class="mbr-section-head">
-                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Oque ta rolando nas redes sociais</strong></h4>
+                <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Acompanhe nossas redes sociais</strong></h4>
                 {/* <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-5">Itens&nbsp; vindos do instagram</h5> */}
             </div>
             <div class="row mt-4">
