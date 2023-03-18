@@ -53,14 +53,14 @@ function ContactForm() {
             setError("")
 
 
-            await axios.post("http://localhost:21055/sendmailfale", {
+            await axios.post("http://realenergy.com.br:21055/sendmailfale", {
                 nome,
                 email,
                 motivo,
                 menssage
             }).then((result) => {
                 setResultTrue(result)
-                handlerTimeout(setNome, setResultTrue, 30000)
+                handlerTimeout(setResultTrue, setResultTrue, 30000)
             }).catch((err) => {
                 console.log(err)
             })
@@ -94,7 +94,7 @@ function ContactForm() {
                                 <input type="text" name="name" placeholder="Nome" class="form-control" id="formName" required onChange={event => setNome(event.target.value)} />
                             </div>
                             <div class="col-md col-sm-12 form-group mb-3" data-for="email">
-                                <input type="email" name="email" placeholder="Examplo@realenergy.com.br" class="form-control" required onChange={event => setEmail(event.target.value)} />
+                                <input type="email" name="email" placeholder="seuemail@exemplo.com.br" class="form-control" required onChange={event => setEmail(event.target.value)} />
                             </div>
                             <div class="col-12 form-group mb-3" data-for="url">
 

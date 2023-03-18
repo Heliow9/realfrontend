@@ -3491,6 +3491,10 @@ a {
     mix-blend-mode: color-dodge;
   }
 
+  .marginNav{
+    margin-right: 6rem !important;
+  }
+
 }
 
 #cb-cookie-banner {

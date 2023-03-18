@@ -23,8 +23,8 @@ function Navbar() {
                         <span></span>
                     </div>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <div className="collapse navbar-collapse marginNav" id="navbarSupportedContent">
+                    <ul className="navbar-nav nav-dropdown " data-app-modern-menu="true">
                         <Link to='/#header1-f'>    <li className="nav-item"><a className="nav-link link text-primary display-4">Início</a></li></Link>
                         <Link to='/about#image2-10'>   <li className="nav-item"><a className="nav-link link text-primary display-4">Nossa história</a></li></Link>
                         <Link to='/etica#content6-1n'>  <li className="nav-item"><a className="nav-link link text-primary display-4" >Ética e Condutas</a></li></Link>
