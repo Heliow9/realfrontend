@@ -3,7 +3,19 @@ import React, { useState } from 'react';
 // import { Container } from './styles';
 
 function TrabalheForm() {
+    const [nome, setNome] = useState("")
+    const [email, setEmail] = useState("")
+    const [cargos, setCargos] = useState("")
+    const [nasc, setNasc] = useState("")
+    const [file, setFile] = useState([])
+    const [observation, setObservation] = useState("")
+    
 
+
+    function HandlerSendFormTrabalhe(e) {
+        e.preventDefault()
+      console.log(file)
+    }
 
     return <section data-bs-version="5.1" class="form5 cid-twHiEKrqNg" id="form5-1v">
 
@@ -13,13 +25,13 @@ function TrabalheForm() {
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
                     <strong>Trabalhe Conosco</strong>
                 </h3>
-              
+
 
             </div>
             <div class="row justify-content-center mt-4">
-                
+
                 <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <p>Faça parte do nosso time e ajude a REAL ENERGY a ser cada vez melhor! Para se candidatar a uma vaga, preencha o formulário abaixo.</p>
+                    <p>Faça parte do nosso time e ajude a REAL ENERGY a ser cada vez melhor! Para se candidatar a uma vaga, preencha o formulário abaixo.</p>
                     <form class="mbr-form form-with-styler" data-form-title="Form Name">
 
                         <div class="row">
@@ -42,14 +54,18 @@ function TrabalheForm() {
 
                             <div class="col-12 form-group mb-3" data-for="url">
 
-                                <select class="form-control" aria-label="Default select example">
-                                    <option selected disabled>Cargos</option>
-                                    <option value="1">Cargos</option>
+                                <select class="form-control" >
+                                    <option selected disabled>Selecione o nivel de experiência</option>
+                                    <option value="1">Auxiliar</option>
+                                    <option value="1">Auxiliar Adm</option>
+                                    <option value="1">Analista</option>
+                                    <option value="1">Gerente</option>
+                                    <option value="1">Coordenador</option>
 
                                 </select>
                             </div>
                             <div class="col-12 form-group mb-3 labelcontrol" data-for="url" >
-                                <label htmlFor="" className='form-label' >Data de nascimento: </label>
+                                <label htmlFor="" className='form-label' >Telefone pra contato: </label>
                                 <input type="tel" name="telephone" id="" className='form-control' placeholder='(81)xxxx-xxxx' />
                             </div>
                             <div class="col-12 form-group mb-3 labelcontrol" data-for="url">
@@ -60,13 +76,13 @@ function TrabalheForm() {
 
                             <div class="col-12 form-group mb-3" data-for="url">
                                 <label htmlFor="" className='form-label' >Anexar Curriculo: </label>
-                                <input type="file" accept='application/pdf,application' name="url"class="form-control" />
+                                <input type="file" accept='application/pdf,application' name="url" class="form-control" onChange={event => setFile(event.target.files[0])} />
                             </div>
                             <div class="col-12 form-group mb-3" data-for="textarea">
                                 <textarea name="textarea" placeholder="Observação" data-form-field="textarea" class="form-control" id="textarea-form5-1v"></textarea>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-                                <button type="submit" class="btn btn-primary display-4">Enviar Curriculo</button>
+                                <button type="submit" class="btn btn-primary display-4" onClick={HandlerSendFormTrabalhe} >Enviar Curriculo</button>
                             </div>
                         </div>
                         <span class="gdpr-block">

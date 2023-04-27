@@ -3566,3 +3566,10 @@ a {
 .redInputFocus input:focus {
     outline-color: red !important;
 }
+
+.slider-content{
+  background-color: white;
+ padding: 20px;
+
+ 
+}

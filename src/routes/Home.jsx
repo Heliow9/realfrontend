@@ -16,9 +16,12 @@ import iluminacao from './assets/images/2.png'
 import transmissao from './assets/images/3.jpg'
 import eolica from './assets/images/4.jpg'
 import aeroporto from './assets/images/6.jpg'
+import cabeamento from './assets/images/7.jpeg'
+import construcao from './assets/images/8.jpg'
 import Footer from '../routes/components/Footer'
 import SectionScreen from './components/SectionScreen';
 import { Link } from "react-router-dom";
+import LightBox from './components/LightBox';
 function Home() {
 
 
@@ -45,7 +48,7 @@ function Home() {
                   <strong>Quem somos?&nbsp;</strong></h4>
                 <p class="mbr-text mbr-fonts-style mb-4 display-7">
                   A RealEnergy é uma organização que foi constituída no ano de 1992 tendo como atividade principal a representação de materiais elétricos.</p>
-                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#"><span class="socicon socicon-bale mbr-iconfont mbr-iconfont-btn"></span><Link to="/about" style={{color:"white"}}>CONHEÇA</Link></a></div>
+                <div class="mbr-section-btn"><a class="btn btn-primary display-4" href="#"><span class="socicon socicon-bale mbr-iconfont mbr-iconfont-btn"></span><Link to="/about" style={{ color: "white" }}>CONHEÇA</Link></a></div>
               </div>
             </div>
           </div>
@@ -124,9 +127,9 @@ function Home() {
                       <strong>Tecnologia da Informação</strong>
                     </h5>
                     <p class="mbr-text mbr-fonts-style mb-5 display-4">
-                      - Telemetria de unidades de iluminação pública.<br />
-                      - Aplicação mobile para gerenciamento de parques de iluminação pública.<br />
-                      - Monitoramento de adultoras e bombas para sistemas de distribuição de água.<br />
+                      - Sistema de video monitoramento.<br />
+                      - Redes logística e ativos de rede.<br />
+
 
                     </p>
                     <div class="mbr-section-btn">
@@ -136,7 +139,7 @@ function Home() {
                 </div>
                 <div class="col-12 col-md-5">
                   <div class="img-wrapper">
-                    <img src={iluminacao} alt="Iluminação Pública" />
+                    <img src={cabeamento} alt="Iluminação Pública" />
                   </div>
                 </div>
               </div>
@@ -155,7 +158,9 @@ function Home() {
                     </h5>
                     <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação. <br />
                       - Manutenção. <br />
-                      - Construção e ampliação de linhas de transmissão de 69kv até 500kv. <br />
+                      - Construção e ampliação de linhas de transmissão de até 500kv e subestações. <br />
+                      - Supressão de vegetação em faixas de servidão. <br />
+                      - Tratamento anticorrosivo de estrutura metálica. <br />
                     </p>
                     <div class="mbr-section-btn">
                       <a href="#" class="btn btn-warning display-4">Leia mais</a>
@@ -182,9 +187,8 @@ function Home() {
                     </h5>
                     <p class="mbr-text mbr-fonts-style mb-5 display-4">
                       - Gestão completa de parques de  iluminação.<br />
-                      - Iluminação Cénica ae decorativa.<br />
-                      - Iluminação Industrial.<br />
-                      - Iluminação Predial.<br />
+                      - Iluminação cénica e decorativa.<br />
+                      - Eficiência energética.<br />
                     </p>
                     <div class="mbr-section-btn">
                       <a href="#" class="btn btn-warning display-4">Leia mais</a>
@@ -234,7 +238,7 @@ function Home() {
                     <h5 class="card-title mbr-fonts-style display-5">
                       <strong>Aeroportos</strong>
                     </h5>
-                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção de torres de medição éolica e aerogeradores. <br />
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">- Operação e manutenção de sistemas aeroportuários. <br />
                     </p>
                     <div class="mbr-section-btn">
                       <a href="#" class="btn btn-warning display-4">Leia mais</a>
@@ -249,12 +253,40 @@ function Home() {
               </div>
             </div>
           </div>
+          <div class="col-12 col-lg-6">
+            <div class="card-wrapper">
+              <div class="row">
+                <div class="col-12 col-md-7">
+                  <div class="text-wrapper">
+
+                    <h5 class="card-title mbr-fonts-style display-5">
+                      <strong>Construção Civil</strong>
+                    </h5>
+                    <p class="mbr-text mbr-fonts-style mb-5 display-4">
+                      - Construção. <br />
+                      - Reformas e manutenção civil. <br />
+                    </p>
+                    <div class="mbr-section-btn">
+                      <a href="#" class="btn btn-warning display-4">Leia mais</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-md-5">
+                  <div class="img-wrapper">
+                    <img src={construcao} alt="Construção Civil" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
 
 
     </section>
+
+    <LightBox className="sliderCarrousel" />
 
 
     <SocialItens />

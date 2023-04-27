@@ -1,0 +1,30 @@
+.slider-content h2{
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 90px;
+    margin-top: 20px;
+}
+
+.slider-main{
+    display: flex;
+  
+    
+}
+
+@media (min-width: 900px) {
+    .slider-image{
+        width: 230px !important;
+        height: 160px !important;
+        margin: 0 auto;
+        
+    }
+    
+  }
+
+.slider-image{
+    width: 180px !important;
+    height: 130px !important;
+    margin: 0 auto;
+    
+}
+

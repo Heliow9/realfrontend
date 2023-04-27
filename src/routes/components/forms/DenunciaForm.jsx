@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function DenunciaForm() {
 
-    const [stateIdentification, setIdentificationState] = useState(false)
+    const [stateIdentification, setIdentificationState] = useState(true)
     const [relashionType, setRelashiontype] = useState(false)
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
@@ -62,7 +62,7 @@ function DenunciaForm() {
                 setError("")
 
 
-                await axios.post("http://localhost:21055/sendmaildenuncia", {
+                await axios.post("https://realenergy.com.br:21055/sendmaildenuncia", {
                     nome,
                     email,
                     ocorrencia,
@@ -105,7 +105,7 @@ function DenunciaForm() {
                 setError("")
 
 
-                await axios.post("http://realenergy.com.br:21055/sendmaildenuncia", {
+                await axios.post("https://realenergy.com.br:21055/sendmaildenuncia", {
                     nome,
                     email,
                     ocorrencia,
@@ -114,7 +114,7 @@ function DenunciaForm() {
                     relato: menssage
                 }).then((result) => {
                     setResultTrue(result)
-                    handlerTimeout(setResultTrue, setResultTrue,6000)
+                    handlerTimeout(setResultTrue, setResultTrue, 6000)
                 }).catch((err) => {
                     console.log(err)
                 })
@@ -146,7 +146,7 @@ function DenunciaForm() {
                             <div class="col-md col-sm-12 form-group mb-6" data-for="name" style={{ display: 'flex', flexDirection: 'row' }}>
                                 <label class="form-check-label" for="flexSwitchCheckChecked" style={{ marginRight: 10 }}>Você deseja se identificar ?</label>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" onChange={(e) => setIdentificationState(!stateIdentification)} />
+                                    <input class="form-check-input" type="checkbox" checked={stateIdentification} id="flexSwitchCheckChecked" onChange={(e) => setIdentificationState(!stateIdentification)} />
                                 </div>
                             </div>
                             {

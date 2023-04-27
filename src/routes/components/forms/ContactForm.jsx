@@ -27,46 +27,51 @@ function ContactForm() {
 
     async function handlerSendContact(e) {
         e.preventDefault()
-        if (nome === "" || nome === null) {
-            setResultTrue(false)
-            setError("O campo nome não pode ser vazio.")
-            handlerTimeout(setNome, setError, 5000)
-        } else if (email === "" || email === null) {
-            setResultTrue(false)
-            setError('O campo email não deve ser em branco ou fora do padrão email.')
-            handlerTimeout(setNome, setError, 5000)
-        } else if (motivo === "" || motivo === null || motivo === 'selected') {
-            setResultTrue(false)
-            setError("Você deve selecionar o motivo do contato.")
-            handlerTimeout(setNome, setError, 5000)
-        } else if (menssage === "" || menssage === null) {
-            setResultTrue(false)
-            setError("O campo de mensagem não pode ser em branco.");
-            handlerTimeout(setNome, setError, 5000)
-        } else if (checkbox === false) {
-            setResultTrue(false)
-            setError("Você precisa concorda com os Termos e Políticas de Privacidade.");
-            handlerTimeout(setNome, setError, 5000)
-        }
-
-        else {
-            setError("")
 
 
-            await axios.post("http://realenergy.com.br:21055/sendmailfale", {
-                nome,
-                email,
-                motivo,
-                menssage
-            }).then((result) => {
-                setResultTrue(result)
-                handlerTimeout(setResultTrue, setResultTrue, 30000)
-            }).catch((err) => {
-                console.log(err)
-            })
+        
 
 
-        }
+        // if (nome === "" || nome === null) {
+        //     setResultTrue(false)
+        //     setError("O campo nome não pode ser vazio.")
+        //     handlerTimeout(setNome, setError, 5000)
+        // } else if (email === "" || email === null) {
+        //     setResultTrue(false)
+        //     setError('O campo email não deve ser em branco ou fora do padrão email.')
+        //     handlerTimeout(setNome, setError, 5000)
+        // } else if (motivo === "" || motivo === null || motivo === 'selected') {
+        //     setResultTrue(false)
+        //     setError("Você deve selecionar o motivo do contato.")
+        //     handlerTimeout(setNome, setError, 5000)
+        // } else if (menssage === "" || menssage === null) {
+        //     setResultTrue(false)
+        //     setError("O campo de mensagem não pode ser em branco.");
+        //     handlerTimeout(setNome, setError, 5000)
+        // } else if (checkbox === false) {
+        //     setResultTrue(false)
+        //     setError("Você precisa concorda com os Termos e Políticas de Privacidade.");
+        //     handlerTimeout(setNome, setError, 5000)
+        // }
+
+        // else {
+        //     setError("")
+
+
+        //     await axios.post("https://realenergy.com.br:21055/sendmailfale", {
+        //         nome,
+        //         email,
+        //         motivo,
+        //         menssage
+        //     }).then((result) => {
+        //         setResultTrue(result)
+        //         handlerTimeout(setResultTrue, setResultTrue, 30000)
+        //     }).catch((err) => {
+        //         console.log(err)
+        //     })
+
+
+        // }
     }
 
 
