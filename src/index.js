@@ -11,6 +11,7 @@ import Denuncia from './routes/Denuncia';
 import Servicos from './routes/Servicos';
 import Contact from './routes/Contact';
 import TrabalheConosco from './routes/TrabalheConosco';
+import Login from './routes/components/forms/LoginForm';
 
 
 
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: "/trabalheconosco",
     element: <TrabalheConosco />
+  },
+  {
+    path: "/login",
+    element: <Login />
   },
 
 
