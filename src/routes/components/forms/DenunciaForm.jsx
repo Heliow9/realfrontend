@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios'
+import { db } from '../../../database/firebase';
+import { collection, addDoc } from "firebase/firestore";
 // import { Container } from './styles';
 
 function DenunciaForm() {
 
     const [stateIdentification, setIdentificationState] = useState(true)
     const [relashionType, setRelashiontype] = useState(false)
-    const [nome, setNome] = useState("")
-    const [email, setEmail] = useState("")
+    const [nome, setNome] = useState("Não identificado")
+    const [email, setEmail] = useState("Não identificado")
     const [ocorrencia, setOcorrencia] = useState("")
     const [denunciadoType, setDenunciadoType] = useState("")
     const [denunciadoName, setDenunciadoName] = useState("")
@@ -62,18 +63,17 @@ function DenunciaForm() {
                 setError("")
 
 
-                await axios.post("https://realenergy.com.br:21055/sendmaildenuncia", {
+                await addDoc(collection(db, 'complaints'), {
                     nome,
                     email,
                     ocorrencia,
-                    relacao: denunciadoType,
-                    denunciado: denunciadoName,
-                    relato: menssage
+                    relacao: relashionType,
+                    denunciadoNome: denunciadoName,
+                    relato: menssage,
+                    data: new Date()
                 }).then((result) => {
-                    setResultTrue(result)
+                    setResultTrue('Sua denuncia foi enviada com sucesso!')
                     handlerTimeout(setNome, setResultTrue, 30000)
-                }).catch((err) => {
-                    console.log(err)
                 })
 
 
@@ -105,19 +105,19 @@ function DenunciaForm() {
                 setError("")
 
 
-                await axios.post("https://realenergy.com.br:21055/sendmaildenuncia", {
+                await addDoc(collection(db, 'complaints'), {
                     nome,
                     email,
                     ocorrencia,
-                    relacao: denunciadoType,
-                    denunciado: denunciadoName,
-                    relato: menssage
+                    relacao: relashionType,
+                    denunciadoNome: denunciadoName,
+                    relato: menssage,
+                    data: new Date()
                 }).then((result) => {
-                    setResultTrue(result)
-                    handlerTimeout(setResultTrue, setResultTrue, 6000)
-                }).catch((err) => {
-                    console.log(err)
+                    setResultTrue('Sua denuncia foi enviada com sucesso!')
+                    handlerTimeout(setNome, setResultTrue, 30000)
                 })
+
 
 
             }
@@ -193,7 +193,7 @@ function DenunciaForm() {
                             </div>
                             <div class="col-12 form-group mb-3" data-for="url">
 
-                                <select class="form-control" aria-label="Default select example" onChange={event => setDenunciadoType(event.target.value)}>
+                                <select class="form-control" onChange={event => setDenunciadoType(event.target.value)}>
                                     <option value="" selected disabled>Relação do denunciado com a empresa:</option>
                                     <option value="colaborador ativo">Coloborador Ativo</option>
                                     <option value="ex colaborador">Ex-Colaborador</option>

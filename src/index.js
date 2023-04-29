@@ -12,6 +12,7 @@ import Servicos from './routes/Servicos';
 import Contact from './routes/Contact';
 import TrabalheConosco from './routes/TrabalheConosco';
 import Login from './routes/components/forms/LoginForm';
+import Register from './routes/components/forms/RegisterForm';
 
 
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
     element: <Login />
   },
 
+  {
+    path: "/register",
+    element: <Register />
+  },
 
 ])
 

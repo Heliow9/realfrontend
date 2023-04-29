@@ -5,10 +5,48 @@ import cep from 'cep-promise'
 
 function FornecedorForm() {
 
+    const [razaoSocial, setRazaoSocial] = useState("");
+    const [cnpj, setCnpj] = useState("");
+    const [email, setEmail] = useState("");
+    const [atuationArea, setAtuationArea] = useState("Engenharia Civil");
     const [cepresult, setCep] = useState("");
     const [endereco, setEndereco] = useState("");
-    const [cidade, setCidade] = useState("");
     const [bairro, setBairro] = useState("");
+    const [residenceNunber, setResidenceNuber] = useState("");
+    const [cidade, setCidade] = useState("");
+    const [endereComplement, setEnderecoComplement] = useState("");
+    const [coutry, setCoutry] = useState("");
+
+
+    //selected input Nivel 1
+    const [category, setCategory] = useState("");
+
+
+    // checkbox Nivel 2
+    const [auditoriaCheck, setAuditoriaCheck] = useState(false);
+    const [beneficiosCheck, setBeneficiosCheck] = useState(false);
+    const [epiCheck, setEpiCheck] = useState(false);
+    const [facilitiesCheck, setFacilitiesCheck] = useState(false);
+    const [informaticaCheck, setInformaticaCheck] = useState(false);
+    const [infraestruturaCheck, setInfraEstruturaCheck] = useState(false);
+    const [materialGraficoCheck, setMaterialGraficoCheck] = useState(false);
+    const [materialEscritorioCheck, setMaterialEscritorioCheck] = useState(false);
+    const [materialEletricoCheck, setMateerialEletricoCheck] = useState(false);
+    const [ObrasConversacaoCheck, setObrasConservacaoCheck] = useState(false);
+    const [ObrasSinalizacaoCheck, setObrasSinalizacao] = useState(false);
+    const [pecasCheck, setPecasCheck] = useState(false);
+    const [produtosAsfalticosCheck, setProdutosAsfalticosCheck] = useState(false);
+    const [servicosManuntecaoCheck, setServicosManutencaoCheck] = useState(false);
+    const [servicosOperacoesCheck, setServicosOperacoesCheck] = useState(false);
+    const [TecnologiaAutomacaoCheck, setTecnologiaAutomacao] = useState(false);
+    const [tintasCheck, setTintasCheck] = useState(false);
+    const [TransportePassageirosCheck, setTranspoterCheck] = useState(false);
+    const [TransporteValoresCheck, setTransporterValoresCheck] = useState(false);
+    const [outroCheck, setOutrosCheck] = useState(false);
+    // results
+    const [messageError, setError] = useState("")
+    const [resultTrue, setResultTrue] = useState("")
+
 
     function handlerGetAndress() {
         cep(cepresult).then((result) => {
@@ -23,6 +61,29 @@ function FornecedorForm() {
     }
 
 
+    function handlerSendForm(e) {
+        e.preventDefault()
+        if (razaoSocial === "") {
+            setError('Por favor informe a razão social.')
+        } else if (cnpj === "") {
+            setError('Cnpj invalido verifique!')
+            console.log(messageError)
+        } else if (email === "") {
+            setError('Email invalido ou em verifique!')
+        } else if (cepresult === ""){
+            setError('Cep invalido ou em branco verifique!')
+        }else if (residenceNunber ===""){
+            setError('É necessário preencher o numero do endereço.')
+        }else if(category ===""){
+        setError("É necessário selecionar uma categória de nivel 1")
+        }else if(auditoriaCheck || beneficiosCheck === false){
+            setError('Não passou')
+            
+        }else{
+            setError('entrou aqui')
+        }
+
+    }
 
 
 
@@ -39,8 +100,7 @@ function FornecedorForm() {
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                    <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler mx-auto"
-                        data-form-title="Form Name">
+                    <form class="mbr-form form-with-styler mx-auto">
                         <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">
                             O pré-cadastro de fornecedores permite que a REAL ENERGY conheça a área de atuação da sua
                             empresa, principais produtos e serviços prestados, e possa convida-lo a parcicipar de um
@@ -58,35 +118,35 @@ function FornecedorForm() {
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="cnpj">
                                 <label for="cnpj">*Razão social</label>
                                 <input required type="text" name="cnpj" placeholder="Razão Social" data-form-field="cnpj"
-                                    class="form-control" id="email-form7-1k" />
+                                    class="form-control" id="email-form7-1k" onChange={event => setRazaoSocial(event.target.value)} />
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="cnpj">
                                 <label for="cnpj">*CNPJ</label>
-                                <input required type="text" name="cnpj" placeholder="cnpj" data-form-field="cnpj"
-                                    class="form-control" id="email-form7-1k" />
+                                <input required type="text" name="cnpj" class="form-control" placeholder="cnpj" onChange={event => setCnpj(event.target.value)} />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Email">*Email</label>
                                 <input required type="text" name="Email" placeholder="Email" data-form-field="Email"
-                                    class="form-control" id="phone-form7-1k" />
+                                    class="form-control" id="phone-form7-1k" onChange={event => setEmail(event.target.value)} />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Email">*Área de Atuação</label>
                                 <select type="select" name="Email" placeholder="Email" data-form-field="Email"
-                                    class="form-control" id="phone-form7-1k">
-                                    <option>Engenharia Civil</option>
-                                    <option>Engenharia Mecânica</option>
-                                    <option>Engenharia Elétrica</option>
-                                    <option>Engenharia Automação</option>
-                                    <option>Engenharia Eletronica</option>
+                                    class="form-control" id="phone-form7-1k" onChange={event => setAtuationArea(event.target.value)}>
+                                    <option value='Engenharia Civil'>Engenharia Civil</option>
+                                    <option value='Engenharia Mecânica'>Engenharia Mecânica</option>
+                                    <option value='Engenharia Elétrica'>Engenharia Elétrica</option>
+                                    <option value='Engenharia Automação'>Engenharia Automação</option>
+                                    <option value='Engenharia Eletronica'>Engenharia Eletronica</option>
+                                    <option value='Outros'>Outros</option>
 
                                 </select>
                             </div>
 
 
-                            <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
+                            <div data-for="cep" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Cep">*Cep</label>
                                 <Cep
                                     value={cepresult}
@@ -111,7 +171,7 @@ function FornecedorForm() {
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="numero">*Numero</label>
                                 <input required type="text" name="numero" placeholder="numero" data-form-field="endereco"
-                                    class="form-control" id="phone-form7-1k" />
+                                    class="form-control" id="phone-form7-1k" onChange={event=>setResidenceNuber(event.target.value)} />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
@@ -123,7 +183,7 @@ function FornecedorForm() {
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="complemento">Complemento</label>
                                 <input required type="text" name="complemento" placeholder="complemento"
-                                    data-form-field="complemento" class="form-control" id="phone-form7-1k" />
+                                    data-form-field="complemento" class="form-control" id="phone-form7-1k" onChange={event => setEnderecoComplement(event.target.value)} />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
@@ -133,82 +193,82 @@ function FornecedorForm() {
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                                <fieldset>
+                                <fieldset onChange={event => setCategory(event.target.value)} >
                                     <legend>Categoria de Fornecimento 1° Nivel</legend>
 
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="huey" name="drone" value="huey" />
-                                        <label class="form-check-label" for="huey">Serviços</label>
+                                        <input type="radio" class="form-check-input" id="Serviços" name="drone" value="Serviços" />
+                                        <label class="form-check-label" for="Serviços">Serviços</label>
                                     </div>
 
                                     <div class="form-check">
-                                        <input type="radio" class="form-check-input" id="dewey" name="drone" value="dewey" />
-                                        <label class="form-check-label" for="dewey">Materiais</label>
+                                        <input type="radio" class="form-check-input" id="Materiais" name="drone" value="Materiais" />
+                                        <label class="form-check-label" for="Materiais">Materiais</label>
                                     </div>
 
                                     <div class="form-check">
-                                        <input type="radio" id="louie" class="form-check-input" name="drone" value="louie" />
-                                        <label class="form-check-label" for="louie">Materiais e Serviços</label>
+                                        <input type="radio" id="Materiais e Serviços" class="form-check-input" name="drone" value="Materiais e Serviços" />
+                                        <label class="form-check-label" for="Materiais e Serviços">Materiais e Serviços</label>
                                     </div>
                                 </fieldset>
                                 <h4>Categoria de Fonecimento 2° Nivel</h4>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="auditCons" />
+                                    <input class="form-check-input" type="checkbox" id="auditCons" checked={auditoriaCheck} onChange={() => setAuditoriaCheck(!auditoriaCheck)} />
                                     <label class="form-check-label" for="auditCons">
                                         Auditoria / Consultorias
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="beneficios" />
+                                    <input class="form-check-input" type="checkbox" id="beneficios" checked={beneficiosCheck} onChange={() => setBeneficiosCheck(!beneficiosCheck)} />
                                     <label class="form-check-label" for="beneficios">
                                         Benefícios
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="epis" />
+                                    <input class="form-check-input" type="checkbox" id="epis" checked={epiCheck} onChange={() => setEpiCheck(!epiCheck)} />
                                     <label class="form-check-label" for="epis">
                                         EPI / Uniformes
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="facilities" />
+                                    <input class="form-check-input" type="checkbox" id="facilities" checked={facilitiesCheck} onChange={() => setFacilitiesCheck(!facilitiesCheck)} />
                                     <label class="form-check-label" for="facilities">
                                         Facilities
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="eletronics" />
+                                    <input class="form-check-input" type="checkbox" id="eletronics" checked={informaticaCheck} onChange={() => setInformaticaCheck(!informaticaCheck)} />
                                     <label class="form-check-label" for="eletronics">
                                         Informática / Eletronicos
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="infra" />
+                                    <input class="form-check-input" type="checkbox" id="infra" checked={infraestruturaCheck} onChange={() => setInfraEstruturaCheck(!infraestruturaCheck)} />
                                     <label class="form-check-label" for="infra">
                                         Infraestutura - Instalações
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="materialGrafico" />
+                                    <input class="form-check-input" type="checkbox" id="materialGrafico" checked={materialGraficoCheck} onChange={() => setMaterialGraficoCheck(!materialGraficoCheck)} />
                                     <label class="form-check-label" for="materialGrafico">
                                         Mat. Gráfico
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="matHigienie" />
+                                    <input class="form-check-input" type="checkbox" id="matHigienie" checked={materialEscritorioCheck} onChange={() => setMaterialEscritorioCheck(!materialEscritorioCheck)} />
                                     <label class="form-check-label" for="matHigienie">
                                         Material de Escritório / Higiene / Limpeza
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="matEletrico" />
+                                    <input class="form-check-input" type="checkbox" id="matEletrico" checked={materialEletricoCheck} onChange={() => setMateerialEletricoCheck(!materialEletricoCheck)} />
                                     <label class="form-check-label" for="matEletrico">
                                         Material Elétrico
                                     </label>
@@ -216,7 +276,7 @@ function FornecedorForm() {
 
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="obrasemeioambiente" />
+                                    <input class="form-check-input" type="checkbox" id="obrasemeioambiente" checked={ObrasConversacaoCheck} onChange={() => setObrasConservacaoCheck(!ObrasConversacaoCheck)} />
                                     <label class="form-check-label" for="obrasemeioambiente">
                                         Obras - Conservação Especial / Meio Ambiente
                                     </label>
@@ -225,35 +285,35 @@ function FornecedorForm() {
 
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="obrassinalizacao" />
+                                    <input class="form-check-input" type="checkbox" id="obrassinalizacao" checked={ObrasSinalizacaoCheck} onChange={() => setObrasSinalizacao(!ObrasSinalizacaoCheck)} />
                                     <label class="form-check-label" for="obrassinalizacao">
                                         Obras - Sinalização / Elementos de Segurança
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="equipamentosmetro" />
+                                    <input class="form-check-input" type="checkbox" id="equipamentosmetro" checked={pecasCheck} onChange={() => setPecasCheck(!pecasCheck)} />
                                     <label class="form-check-label" for="equipamentosmetro">
                                         Peças / Equip Metrô
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="productsasfalticos" />
+                                    <input class="form-check-input" type="checkbox" id="productsasfalticos" checked={produtosAsfalticosCheck} onChange={() => setProdutosAsfalticosCheck(!produtosAsfalticosCheck)} />
                                     <label class="form-check-label" for="productsasfalticos">
                                         Produtos Asfalticos - Material
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="servManutencao" />
+                                    <input class="form-check-input" type="checkbox" id="servManutencao" checked={servicosManuntecaoCheck} onChange={() => setServicosManutencaoCheck(!servicosManuntecaoCheck)} />
                                     <label class="form-check-label" for="servManutencao">
                                         Serviços de Manutenção
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="servicosOperacoes" />
+                                    <input class="form-check-input" type="checkbox" id="servicosOperacoes" checked={servicosOperacoesCheck} onChange={() => setServicosOperacoesCheck(!servicosOperacoesCheck)} />
                                     <label class="form-check-label" for="servicosOperacoes">
                                         Serviços de Operações
                                     </label>
@@ -261,34 +321,34 @@ function FornecedorForm() {
 
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="tecInfra" />
+                                    <input class="form-check-input" type="checkbox" id="tecInfra" checked={TecnologiaAutomacaoCheck} onChange={() => setTecnologiaAutomacao(!TecnologiaAutomacaoCheck)} />
                                     <label class="form-check-label" for="tecInfra">
                                         Tecnologia - Automação / Eletrica/ Infraestutura / Sistemas
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="tintasPlacas" />
+                                    <input class="form-check-input" type="checkbox" id="tintasPlacas" checked={tintasCheck} onChange={() => setTintasCheck(!tintasCheck)} />
                                     <label class="form-check-label" for="tintasPlacas">
                                         Tintas Viárias/Placas/Tachas
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="transporte" />
+                                    <input class="form-check-input" type="checkbox" id="transporte" checked={TransportePassageirosCheck} onChange={() => setTranspoterCheck(!TransportePassageirosCheck)} />
                                     <label class="form-check-label" for="transporte">
                                         Transporte de Passageiros
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="transporteVal" />
+                                    <input class="form-check-input" type="checkbox" id="transporteVal" checked={TransporteValoresCheck} onChange={() => setTransporterValoresCheck(!TransporteValoresCheck)} />
                                     <label class="form-check-label" for="transporteVal">
                                         Transporte de Valores
                                     </label>
                                 </div>
 
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="outhers" />
+                                    <input class="form-check-input" type="checkbox" id="outhers" checked={outroCheck} onChange={() => setOutrosCheck(!outroCheck)} />
                                     <label class="form-check-label" for="outhers">
                                         Outros
                                     </label>
@@ -302,7 +362,7 @@ function FornecedorForm() {
 
 
                             <div class="col-auto mbr-section-btn align-center">
-                                <button type="submit" class="btn btn-primary display-4">Enviar</button>
+                                <button type="submit" class="btn btn-primary display-4" onClick={handlerSendForm}>Enviar</button>
                             </div>
                         </div>
                         <span class="gdpr-block">
@@ -313,7 +373,18 @@ function FornecedorForm() {
                                             href="policy.html">Política de Privacidade</a>.</span>
                             </label>
                         </span>
+                        {
+                            messageError ? <div class="alert alert-danger" role="alert">
+                                {messageError}
+                            </div> : null
+                        }
+                        {
+                            resultTrue ? <div class="alert alert-success" role="alert">
+                                Mensagem enviada com sucesso!
+                            </div> : null
+                        }
                     </form>
+
                 </div>
             </div>
         </div>
