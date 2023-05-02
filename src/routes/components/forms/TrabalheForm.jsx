@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { ref, uploadBytes, uploadBytesResumable, getDownloadURL } from 'firebase/storage'
+import { storage } from '../../../database/firebase'
 // import { Container } from './styles';
 
 function TrabalheForm() {
@@ -9,12 +10,31 @@ function TrabalheForm() {
     const [nasc, setNasc] = useState("")
     const [file, setFile] = useState([])
     const [observation, setObservation] = useState("")
-    
-
+    const [pdfUrl, setPdfUrl] = useState()
+    const [progress, setProgress] = useState(0)
 
     function HandlerSendFormTrabalhe(e) {
         e.preventDefault()
-      console.log(file)
+
+        
+        const storageRef = ref(storage, `vitaes/${file.name}`)
+        const uploadTask = uploadBytesResumable(storageRef, file)
+        uploadTask.on(
+            "state_changed",
+            snapshot => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                setProgress(progress)
+            },
+            error => {
+                console.log(error)
+            },
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then(url => {
+                    setPdfUrl(url)
+                })
+            }
+        )
+
     }
 
     return <section data-bs-version="5.1" class="form5 cid-twHiEKrqNg" id="form5-1v">
@@ -32,14 +52,8 @@ function TrabalheForm() {
 
                 <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
                     <p>Faça parte do nosso time e ajude a REAL ENERGY a ser cada vez melhor! Para se candidatar a uma vaga, preencha o formulário abaixo.</p>
-                    <form class="mbr-form form-with-styler" data-form-title="Form Name">
+                    <form class="mbr-form form-with-styler">
 
-                        <div class="row">
-                            <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
-                            <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                                Oops...! some problem!
-                            </div>
-                        </div>
                         <div class="dragArea row">
 
                             <div class="col-md col-sm-12 form-group mb-3" data-for="name">
@@ -76,7 +90,7 @@ function TrabalheForm() {
 
                             <div class="col-12 form-group mb-3" data-for="url">
                                 <label htmlFor="" className='form-label' >Anexar Curriculo: </label>
-                                <input type="file" accept='application/pdf,application' name="url" class="form-control" onChange={event => setFile(event.target.files[0])} />
+                                <input type="file" accept='application/pdf,application' name="filepdf" class="form-control" onChange={event => setFile(event.target.files[0])} />
                             </div>
                             <div class="col-12 form-group mb-3" data-for="textarea">
                                 <textarea name="textarea" placeholder="Observação" data-form-field="textarea" class="form-control" id="textarea-form5-1v"></textarea>
@@ -94,6 +108,7 @@ function TrabalheForm() {
                             </label>
                         </span>
                     </form>
+                    {<progress value={progress} />}
                 </div>
             </div>
         </div>

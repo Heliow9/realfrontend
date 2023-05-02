@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Cep from "react-simple-cep-mask";
 import cep from 'cep-promise'
+import { db } from '../../../database/firebase';
+import { collection, addDoc } from "firebase/firestore";
 // import { Container } from './styles';
 
 function FornecedorForm() {
@@ -15,7 +17,7 @@ function FornecedorForm() {
     const [residenceNunber, setResidenceNuber] = useState("");
     const [cidade, setCidade] = useState("");
     const [endereComplement, setEnderecoComplement] = useState("");
-    const [coutry, setCoutry] = useState("");
+    const [coutry, setCoutry] = useState("Brazil");
 
 
     //selected input Nivel 1
@@ -48,11 +50,20 @@ function FornecedorForm() {
     const [resultTrue, setResultTrue] = useState("")
 
 
+
+    function handlerTimeout(value, state, count) {
+        setTimeout(() => {
+            state("")
+        }, count)
+    }
+
+
     function handlerGetAndress() {
         cep(cepresult).then((result) => {
             setEndereco(result.street)
             setCidade(result.city)
             setBairro(result.neighborhood)
+
         })
     }
 
@@ -61,7 +72,7 @@ function FornecedorForm() {
     }
 
 
-    function handlerSendForm(e) {
+    async function handlerSendForm(e) {
         e.preventDefault()
         if (razaoSocial === "") {
             setError('Por favor informe a razão social.')
@@ -70,17 +81,63 @@ function FornecedorForm() {
             console.log(messageError)
         } else if (email === "") {
             setError('Email invalido ou em verifique!')
-        } else if (cepresult === ""){
+        } else if (cepresult === "") {
             setError('Cep invalido ou em branco verifique!')
-        }else if (residenceNunber ===""){
+        } else if (residenceNunber === "") {
             setError('É necessário preencher o numero do endereço.')
-        }else if(category ===""){
-        setError("É necessário selecionar uma categória de nivel 1")
-        }else if(auditoriaCheck || beneficiosCheck === false){
-            setError('Não passou')
-            
-        }else{
-            setError('entrou aqui')
+        } else if (category === "") {
+            setError("É necessário selecionar uma categória de nivel 1")
+        } else if (auditoriaCheck || beneficiosCheck || epiCheck || facilitiesCheck || informaticaCheck || infraestruturaCheck || materialGraficoCheck || materialEscritorioCheck ||
+            materialEletricoCheck || ObrasSinalizacaoCheck || ObrasConversacaoCheck || pecasCheck || produtosAsfalticosCheck || servicosManuntecaoCheck || servicosOperacoesCheck ||
+            TecnologiaAutomacaoCheck || tintasCheck || TransportePassageirosCheck || TransporteValoresCheck || outroCheck === true) {
+            // continua o cadastro !
+            await addDoc(collection(db, 'suppliers'), {
+                razaoSocial: razaoSocial,
+                cnpj: cnpj,
+                email: email,
+                AreaAtuacao: atuationArea,
+                cep: cepresult,
+                endereco: endereco,
+                bairro: bairro,
+                cidade: cidade,
+                complemento: endereComplement,
+                pais: coutry,
+                category,
+                category2: {
+                    auditoriaCheck,
+                    beneficiosCheck,
+                    epiCheck,
+                    facilitiesCheck,
+                    informaticaCheck,
+                    infraestruturaCheck,
+                    materialGraficoCheck,
+                    materialEscritorioCheck,
+                    materialEletricoCheck,
+                    ObrasConversacaoCheck,
+                    ObrasSinalizacaoCheck,
+                    pecasCheck,
+                    produtosAsfalticosCheck,
+                    servicosManuntecaoCheck,
+                    servicosOperacoesCheck,
+                    TecnologiaAutomacaoCheck,
+                    tintasCheck,
+                    TransportePassageirosCheck,
+                    TransporteValoresCheck,
+                    outroCheck
+                }
+
+
+
+            }).then((result) => {
+                setResultTrue('Seu cadastro foi efetuado com sucesso!')
+              
+            }).catch((error) => {
+                console.log(error);
+            })
+
+        } else {
+            setError('É necessário no minimo selecionar uma das oções das categorias abaixo! ')
+            handlerTimeout(setError, setError, 5000)
         }
 
     }
@@ -171,7 +228,7 @@ function FornecedorForm() {
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="numero">*Numero</label>
                                 <input required type="text" name="numero" placeholder="numero" data-form-field="endereco"
-                                    class="form-control" id="phone-form7-1k" onChange={event=>setResidenceNuber(event.target.value)} />
+                                    class="form-control" id="phone-form7-1k" onChange={event => setResidenceNuber(event.target.value)} />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
