@@ -4,10 +4,11 @@ import CpfCnpj from "@react-br-forms/cpf-cnpj-mask";
 import { storage, db } from '../../../database/firebase'
 import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 import { NumericFormat } from 'react-number-format';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, query, orderBy, getDocs } from 'firebase/firestore';
 // import { Container } from './styles';
 
 function TrabalheForm() {
+    const [curriculoData, setCurriculoData] = useState()
     const [nome, setNome] = useState("")
     const [email, setEmail] = useState("")
     const [nivel, setNivel] = useState("")
@@ -33,7 +34,7 @@ function TrabalheForm() {
 
 
     console.log(cpf)
-    function HandlerSendFormTrabalhe(e) {
+    async function HandlerSendFormTrabalhe(e) {
         e.preventDefault()
         if (nome === "") {
             setError('Por gentileza digite seu nome.')
@@ -50,13 +51,13 @@ function TrabalheForm() {
         } else if (telephone === "" || telephone.length < 11) {
             setError('numero do telefone inválido ou incorreto.')
             handlerTimeout(email, setError, 5000)
-        } else if (nasc) {
+        } else if (nasc == "") {
             setError('Selecione a data de nascimento')
             handlerTimeout(nasc, setError, 5000)
         } else if (estado === "") {
             setError('Selecione um estado')
             handlerTimeout(estado, setError, 5000)
-        } 
+        }
         else if (cidade === "") {
             setError('Selecione um estado')
             handlerTimeout(cidade, setError, 5000)
@@ -68,37 +69,60 @@ function TrabalheForm() {
             setError('Você precisa concorda com os termos de uso!')
             handlerTimeout(estado, setError, 3000)
         } else {
-            const storageRef = ref(storage, `vitaes/${file.name}`)
-            const uploadTask = uploadBytesResumable(storageRef, file)
-            uploadTask.on(
-                "state_changed",
-                snapshot => {
-                    const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                    setProgress(progress)
-                },
-                error => {
-                    console.log(error)
-                },
-                () => {
-                    getDownloadURL(uploadTask.snapshot.ref).then(url => {
-                        // encaminha os demais dados do envio do curriculo para o firestore
-                        addDoc(collection(db, 'curriculum'), {
-                            nome,
-                            email,
-                            nivel,
-                            cpf,
-                            telephone,
-                            nasc,
-                            estado,
-                            pretencao,
-                            observation,
-                            urlCurriculum: url
 
+            await getDocs(collection(db, 'curriculum')).then((snap) => {
+                let data = [];
+                snap.docs.forEach((doc) => {
+                    data.push(doc.data())
+                })
+                setCurriculoData(data)
+
+            }).catch((err) => { console.log(err) });
+            // verifica se possui curriculo enviado com o mesmo cpf no mesmo dia
+            let searchQuery = curriculoData.filter(curriculo => curriculo.cpf.includes(cpf))
+            
+            // caso haja ele informa que o curriculo ja se encontra cadastrado
+            if (searchQuery[searchQuery.length - 1].data === new Date().toLocaleDateString('pt-br')) {
+                setResultTrue('')
+                setError('O Curriculo informado já foi enviado nos ultimos dias, aguarde 30 dias e reenvie novamente')
+                handlerTimeout(estado, setError, 10000)
+                setProgress(0)
+            } else {
+                const storageRef = ref(storage, `vitaes/${file.name}`)
+                const uploadTask = uploadBytesResumable(storageRef, file)
+                uploadTask.on(
+                    "state_changed",
+                    snapshot => {
+                        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                        setProgress(progress)
+                    },
+                    error => {
+                        console.log(error)
+                    },
+                    () => {
+                        getDownloadURL(uploadTask.snapshot.ref).then(url => {
+                            // encaminha os demais dados do envio do curriculo para o firestore
+                            addDoc(collection(db, 'curriculum'), {
+                                nome,
+                                email,
+                                nivel,
+                                cpf,
+                                telephone,
+                                nasc,
+                                estado,
+                                cidade,
+                                pretencao,
+                                observation,
+                                urlCurriculum: url,
+                                data: new Date().toLocaleDateString('pt-br')
+
+                            })
+                            setResultTrue('Curriculo enviado com sucesso!')
+                            handlerTimeout(estado, resultTrue, 5000)
                         })
-                        setResultTrue('Curriculo enviado com sucesso!')
-                    })
-                }
-            )
+                    }
+                )
+            }
         }
 
 
@@ -125,7 +149,6 @@ function TrabalheForm() {
                         <div class="dragArea row">
 
                             <div class="col-md col-sm-12 form-group mb-3" data-for="name">
-
                                 <input type="text" name="name" placeholder="Nome Completo" class="form-control" onChange={event => setNome(event.target.value)} />
                             </div>
 
@@ -146,26 +169,26 @@ function TrabalheForm() {
                                 </select>
 
                             </div>
-                            <div class="col-6 form-group mb-3 labelcontrol"  >
+                            <div class="col-sm-12 form-group mb-3 labelcontrol"  >
                                 <label htmlFor="" className='form-label' >CPF: </label>
                                 <CpfCnpj value={cpf} onChange={(event, type) => { setCpf(event.target.value); setMask(type === "CPF") }} className="form-control" maxLength="14" />
 
                             </div>
-                            <div class="col-6 form-group mb-3 labelcontrol" >
+                            <div class="col-sm-12 form-group mb-3 labelcontrol" >
                                 <label htmlFor="" className='form-label' >Telefone pra contato (Preferecia Whatsapp): </label>
                                 <TelefoneBrasileiroInput value={telephone} onChange={event => setTelephone(event.target.value)} temDDD separaNono className="form-control" />
                                 {/* <input type="tel" name="telephone" id="" className='form-control' placeholder='(81)xxxx-xxxx' onChange={event => setTelephone(event.target.value)} /> */}
                             </div>
-                            <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
+                            <div class="col-sm-12 form-group mb-3 labelcontrol" data-for="url">
                                 <label htmlFor="" className='form-label' >Pretenção salarial: </label>
                                 <NumericFormat prefix='R$' className='form-control' onChange={event => setPretention(event.target.value)} />
                                 {/* <input type="text" name="text" id="" className='form-control' /> */}
                             </div>
-                            <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
+                            <div class="col-sm-12 form-group mb-3 labelcontrol" data-for="url">
                                 <label htmlFor="" className='form-label' >Data de nascimento: </label>
-                                <input type="date" name="telephone" id="" className='form-control' />
+                                <input type="date" name="telephone" id="" className='form-control' onChange={event => setNasc(event.target.value)} />
                             </div>
-                            <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
+                            <div class="col-sm-12 form-group mb-3 labelcontrol" data-for="url">
                                 <label htmlFor="" className='form-label' >Estado: </label>
                                 <select class="form-select" required="" onChange={event => setEstado(event.target.value)}>
                                     <option value="">[Selecione uma opção]</option>
@@ -200,7 +223,7 @@ function TrabalheForm() {
                             </div>
                             <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
                                 <label htmlFor="" className='form-label' >Cidade: </label>
-                                <input type="text" name="telephone" id="" className='form-control' onChange={event=>setCidade(event.target.value)}  />
+                                <input type="text" name="telephone" id="" className='form-control' onChange={event => setCidade(event.target.value)} />
                             </div>
 
 

@@ -58,7 +58,7 @@ function Footer() {
                 </div>
                 <div class="row row-copirayt">
                     <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7 copy_cinza">
-                        © Copyright 2023 REALENERGY. All Rights Reserved.
+                        © Copyright 2024-2025 REALENERGY. All Rights Reserved.
                     </p>
                 </div>
                 <br />

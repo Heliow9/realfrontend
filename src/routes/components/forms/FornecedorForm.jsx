@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Cep from "react-simple-cep-mask";
+import CpfCnpj from "@react-br-forms/cpf-cnpj-mask";
 import cep from 'cep-promise'
 import { db } from '../../../database/firebase';
 import { collection, addDoc } from "firebase/firestore";
+import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 // import { Container } from './styles';
 
 function FornecedorForm() {
@@ -10,6 +12,7 @@ function FornecedorForm() {
     const [razaoSocial, setRazaoSocial] = useState("");
     const [cnpj, setCnpj] = useState("");
     const [email, setEmail] = useState("");
+    const [telephone, setTelephone] = useState("");
     const [atuationArea, setAtuationArea] = useState("Engenharia Civil");
     const [cepresult, setCep] = useState("");
     const [endereco, setEndereco] = useState("");
@@ -48,6 +51,7 @@ function FornecedorForm() {
     // results
     const [messageError, setError] = useState("")
     const [resultTrue, setResultTrue] = useState("")
+    const [mask, setMask] = useState("");
 
 
 
@@ -95,6 +99,7 @@ function FornecedorForm() {
                 razaoSocial: razaoSocial,
                 cnpj: cnpj,
                 email: email,
+                telefone: telephone,
                 AreaAtuacao: atuationArea,
                 cep: cepresult,
                 endereco: endereco,
@@ -102,6 +107,7 @@ function FornecedorForm() {
                 cidade: cidade,
                 complemento: endereComplement,
                 pais: coutry,
+                data: new Date().toLocaleDateString('pt-br'),
                 category,
                 category2: {
                     auditoriaCheck,
@@ -130,7 +136,7 @@ function FornecedorForm() {
 
             }).then((result) => {
                 setResultTrue('Seu cadastro foi efetuado com sucesso!')
-              
+
             }).catch((error) => {
                 console.log(error);
             })
@@ -179,13 +185,19 @@ function FornecedorForm() {
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="cnpj">
                                 <label for="cnpj">*CNPJ</label>
-                                <input required type="text" name="cnpj" class="form-control" placeholder="cnpj" onChange={event => setCnpj(event.target.value)} />
+                                <CpfCnpj value={cnpj} onChange={(event, type) => { setCnpj(event.target.value); setMask(type === "CNPJ") }} className="form-control" maxLength="19" placeholder="00.000.000/0001-00" />
+
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
                                 <label for="Email">*Email</label>
                                 <input required type="text" name="Email" placeholder="Email" data-form-field="Email"
                                     class="form-control" id="phone-form7-1k" onChange={event => setEmail(event.target.value)} />
+                            </div>
+
+                            <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
+                                <label for="Email">*Telefone: (Preferencia whatsapp)</label>
+                                <TelefoneBrasileiroInput value={telephone} onChange={event => setTelephone(event.target.value)} temDDD separaNono className="form-control" placeholder="(81)0 0000-0000" />
                             </div>
 
                             <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">

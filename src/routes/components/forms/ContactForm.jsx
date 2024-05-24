@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { db } from '../../../database/firebase';
 import { collection, addDoc } from "firebase/firestore";
-
+import TelefoneBrasileiroInput from "react-telefone-brasileiro";
 
 // import { Container } from './styles';
 
@@ -17,7 +17,7 @@ function ContactForm() {
     const [checkbox, setCheck] = useState(false)
     const inputName = document.getElementById('formName')
     const checkPolicy = document.getElementById('checkPolicy')
-
+    const [telephone, setTelephone] = useState("")
 
 
     function handlerTimeout(value, state, count) {
@@ -63,9 +63,10 @@ function ContactForm() {
             await addDoc(collection(db, 'contact'), {
                 nome,
                 email,
+                telephone,
                 motivo,
                 menssage,
-                data: new Date()
+                data: new Date().toLocaleDateString('pt-br')
             }).then((result) => {
                 if (result) {
                     setResultTrue('Sua mensagem foi enviada com sucesso!')
@@ -103,6 +104,10 @@ function ContactForm() {
                             </div>
                             <div class="col-md col-sm-12 form-group mb-3" data-for="email">
                                 <input type="email" name="email" placeholder="seuemail@exemplo.com.br" class="form-control" required onChange={event => setEmail(event.target.value)} />
+                            </div>
+                            <div class="col-md col-sm-12 form-group mb-3" data-for="email">
+                            <TelefoneBrasileiroInput value={telephone} onChange={event => setTelephone(event.target.value)} temDDD separaNono className="form-control" placeholder="(00)0000-0000" />
+
                             </div>
                             <div class="col-12 form-group mb-3" data-for="url">
 

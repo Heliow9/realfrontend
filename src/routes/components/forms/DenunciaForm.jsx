@@ -11,7 +11,7 @@ function DenunciaForm() {
     const [email, setEmail] = useState("Não identificado")
     const [ocorrencia, setOcorrencia] = useState("")
     const [denunciadoType, setDenunciadoType] = useState("")
-    const [denunciadoName, setDenunciadoName] = useState("")
+    const [denunciadoName, setDenunciadoName] = useState("Não identificado")
     const [menssage, setMenssage] = useState("")
     const [messageError, setError] = useState("")
     const [resultTrue, setResultTrue] = useState("")
@@ -70,7 +70,7 @@ function DenunciaForm() {
                     relacao: relashionType,
                     denunciadoNome: denunciadoName,
                     relato: menssage,
-                    data: new Date()
+                    data: new Date().toLocaleDateString('pt-br')
                 }).then((result) => {
                     setResultTrue('Sua denuncia foi enviada com sucesso!')
                     handlerTimeout(setNome, setResultTrue, 30000)
@@ -87,7 +87,7 @@ function DenunciaForm() {
                 setResultTrue(false)
                 setError('Você deve selecionar o tipo de relação do denunciado.')
                 handlerTimeout(denunciadoType, setError, 10000)
-            } else if (denunciadoName === "") {
+            } else if (denunciadoName === "" && denunciadoType === !"outros") {
                 setResultTrue(false)
                 setError('Você deve informado o nome do denunciado.')
                 handlerTimeout(denunciadoName, setError, 10000)
@@ -112,7 +112,7 @@ function DenunciaForm() {
                     relacao: relashionType,
                     denunciadoNome: denunciadoName,
                     relato: menssage,
-                    data: new Date()
+                    data: new Date().toLocaleDateString('pt-br')
                 }).then((result) => {
                     setResultTrue('Sua denuncia foi enviada com sucesso!')
                     handlerTimeout(setNome, setResultTrue, 30000)

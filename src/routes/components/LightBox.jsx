@@ -10,7 +10,6 @@ import Logo7 from '../../assets/images/orgaos/logo7.jpg'
 import Logo8 from '../../assets/images/orgaos/logo8.jpg'
 import Logo9 from '../../assets/images/orgaos/logo9.jpg'
 import Logo10 from '../../assets/images/orgaos/logo10.jpg'
-import Logo11 from '../../assets/images/orgaos/logo11.jpg'
 import Logo12 from '../../assets/images/orgaos/logo12.jpg'
 import Logo13 from '../../assets/images/orgaos/logo13.jpg'
 import Logo14 from '../../assets/images/orgaos/logo14.jpg'
@@ -95,7 +94,7 @@ function LightBox() {
                 </div>
               
                 <div>
-                    <img src={Logo11} className='slider-image' />
+                    <img src={Logo10} className='slider-image' />
                 </div>
                 <div>
                     <img src={Logo12} className='slider-image' />
@@ -115,9 +114,7 @@ function LightBox() {
                 <div>
                     <img src={Logo17} className='slider-image' />
                 </div>
-                <div>
-                    <img src={Logo18} className='slider-image' />
-                </div>
+               
                 <div>
                     <img src={Logo19} className='slider-image' />
                 </div>
