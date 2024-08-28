@@ -101,7 +101,7 @@ function Home() {
                                     <div class="accordion-body">
                                         <a href={integridade} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                         <div className="pdf-container">
-                                            <iframe src="https://drive.google.com/file/d/1qUhBkScgDrxHwMUCODu6Bgck11jGIBX0/preview" width="640" height="100%" allow="autoplay"></iframe>
+                                            <iframe src="https://drive.google.com/file/d/1Oa8tkykCANWC8NdnksY6zjakZ7vLnbBh/preview" width="640" height="100%" allow="autoplay"></iframe>
 
                                         </div>
 
@@ -118,7 +118,7 @@ function Home() {
                                     <div class="accordion-body">
                                     <a href={privacy} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                         <div className="pdf-container">
-                                            <iframe src="https://drive.google.com/file/d/1bXUecSFl4eAK1rIMPkvR7BdOgvIhWkzp/preview" width="640" height="100%" allow="autoplay"></iframe>
+                                            <iframe src="https://drive.google.com/file/d/1DQlm5-lkRZIC-khXAv8cxJ0WqVoZFSGf/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
                                       
                                     </div>
@@ -135,7 +135,7 @@ function Home() {
                                     <a href={brind} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                         <div className="pdf-container">
 
-                                            <iframe src="https://drive.google.com/file/d/1r1bR_G2i_az3-Oz8HmwV9sp31UpTgx9Y/preview" width="640" height="100%" allow="autoplay"></iframe>
+                                            <iframe src="https://drive.google.com/file/d/1ruh4EGV3WCYBNq6njYrJK1C6ta9ivshY/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
                                        
                                     </div>
@@ -151,7 +151,7 @@ function Home() {
                                     <div class="accordion-body">
                                     <a href={relashioship} download><button type="button" class="btn btn-primary btn-sm"> <AiOutlineDownload size={20} /> Baixar</button></a>
                                         <div className="pdf-container">
-                                            <iframe src="https://drive.google.com/file/d/1iNE56p8gJRWZzqjJn5RzTgQcYGe28kh5/preview" width="640" height="100%" allow="autoplay"></iframe>
+                                            <iframe src="https://drive.google.com/file/d/1XZPQ1umtRYMmF33gZh4SXMr85goauPtS/preview" width="640" height="100%" allow="autoplay"></iframe>
                                         </div>
                                      
                                     </div>
