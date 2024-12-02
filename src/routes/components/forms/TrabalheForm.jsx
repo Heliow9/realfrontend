@@ -26,6 +26,10 @@ function TrabalheForm() {
     const [resultTrue, setResultTrue] = useState("")
     const [mask, setMask] = useState("");
     const [checked, setCheked] = useState(false);
+    const [isPCD, setIsPCD] = useState(false);
+    const [tipoDeficiencia, setTipoDeficiencia] = useState("");
+    const [detalhesDeficiencia, setDetalhesDeficiencia] = useState("");
+    const [necessidadesEspecificas, setNecessidadesEspecificas] = useState("");
     function handlerTimeout(value, state, count) {
         setTimeout(() => {
             state("")
@@ -80,7 +84,7 @@ function TrabalheForm() {
             }).catch((err) => { console.log(err) });
             // verifica se possui curriculo enviado com o mesmo cpf no mesmo dia
             let searchQuery = curriculoData.filter(curriculo => curriculo.cpf.includes(cpf))
-            
+
             // caso haja ele informa que o curriculo ja se encontra cadastrado
             if (searchQuery[searchQuery.length - 1].data === new Date().toLocaleDateString('pt-br')) {
                 setResultTrue('')
@@ -114,7 +118,13 @@ function TrabalheForm() {
                                 pretencao,
                                 observation,
                                 urlCurriculum: url,
-                                data: new Date().toLocaleDateString('pt-br')
+                                data: new Date().toLocaleDateString('pt-br'),
+                                isPCD,
+                                ...(isPCD && {
+                                    tipoDeficiencia,
+                                    detalhesDeficiencia,
+                                    necessidadesEspecificas,
+                                }),
 
                             })
                             setResultTrue('Curriculo enviado com sucesso!')
@@ -225,6 +235,47 @@ function TrabalheForm() {
                                 <label htmlFor="" className='form-label' >Cidade: </label>
                                 <input type="text" name="telephone" id="" className='form-control' onChange={event => setCidade(event.target.value)} />
                             </div>
+                            <div class="col-12 form-group mb-3 labelcontrol">
+                                <label className='form-label'> É PCD? </label>
+                                <input
+                                    type="checkbox"
+                                    checked={isPCD}
+                                    onChange={(e) => setIsPCD(e.target.checked)}
+                                />
+                            </div>
+                            {isPCD && (
+                                <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
+                                     <label className='form-label'>Tipo de Deficiencia:</label>
+                                    <select
+                                        value={tipoDeficiencia}
+                                        onChange={(e) => setTipoDeficiencia(e.target.value)}
+                                        required
+                                         className='form-control'
+                                    >
+                                        <option value="">Selecione</option>
+                                        <option value="Física">Física</option>
+                                        <option value="Auditiva">Auditiva</option>
+                                        <option value="Visual">Visual</option>
+                                        <option value="Intelectual">Intelectual</option>
+                                        <option value="Múltipla">Múltipla</option>
+                                        <option value="Outra">Outra</option>
+                                    </select>
+                                    <input
+                                        className='form-control'
+                                        placeholder="Detalhes da deficiência"
+                                        value={detalhesDeficiencia}
+                                        onChange={event=>setDetalhesDeficiencia(event.target.value)}
+                                        type="text"
+                                    />
+                                    <input
+                                        className='form-control'
+                                        placeholder="Necessidades específicas (Ex: Acessibilidade)"
+                                        value={necessidadesEspecificas}
+                                        onChange={event=>setNecessidadesEspecificas(event.target.value)}
+                                        type="text"
+                                    />
+                                </div>
+                            )}
 
 
 
