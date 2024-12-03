@@ -38,7 +38,7 @@ function TrabalheForm() {
     }
 
 
-    console.log(cpf)
+console.log(cpf)
     async function HandlerSendFormTrabalhe(e) {
         e.preventDefault()
         if (nome === "") {
@@ -243,17 +243,7 @@ function TrabalheForm() {
                                     type="checkbox"
                                     checked={isPCD}
                                     onChange={(e) => setIsPCD(e.target.checked)}
-                                    style={{ marginLeft: 10, padding: 5 }}
-                                    disabled={isAprendiz}
-                                />
-                                <label className='form-label' style={{ marginLeft: 10 }}> É Aprendiz? </label>
-                                <input
-                                    type="checkbox"
-                                    checked={isAprendiz}
-                                    onChange={(e) => setIsAprendiz(e.target.checked)}
-                                    style={{ marginLeft: 10, padding: 5 }}
-                                    disabled={isPCD}
-                                />
+                                                                    />
                             </div>
                             {isPCD && (
                                 <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
@@ -276,14 +266,14 @@ function TrabalheForm() {
                                         className='form-control'
                                         placeholder="Detalhes da deficiência"
                                         value={detalhesDeficiencia}
-                                        onChange={event => setDetalhesDeficiencia(event.target.value)}
+                                        onChange={event=>setDetalhesDeficiencia(event.target.value)}
                                         type="text"
                                     />
                                     <input
                                         className='form-control'
                                         placeholder="Necessidades específicas (Ex: Acessibilidade)"
                                         value={necessidadesEspecificas}
-                                        onChange={event => setNecessidadesEspecificas(event.target.value)}
+                                        onChange={event=>setNecessidadesEspecificas(event.target.value)}
                                         type="text"
                                     />
                                 </div>
@@ -311,7 +301,7 @@ function TrabalheForm() {
                                 <span class="textGDPR display-7" style={{ color: '#a7a7a7' }}><input type="checkbox"
                                     name="gdpr" id="gdpr-form7-1k" checked={checked} onChange={() => setCheked(!checked)} />Eu concordo com os termos de serviços <a
                                         style={{ color: '#149dcc', }} href="terms.html">Termos e serviços</a> e com a  <a style={{ color: '#149cc', textDecoration: 'none' }}
-                                            href="/etica#content6-1n">Política de Privacidade</a>.</span>
+                                            href="policy.html">Política de Privacidade</a>.</span>
                             </label>
                         </span>
                         {
