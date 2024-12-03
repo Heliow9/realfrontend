@@ -30,12 +30,12 @@ function Navbar() {
                         <Link to='/about#image2-10'>   <li className="nav-item"><a className="nav-link link text-primary display-4">Nossa história</a></li></Link>
                         <Link to='/etica#content6-1n'>  <li className="nav-item"><a className="nav-link link text-primary display-4" >Compliance</a></li></Link>
                         <Link to='/servicos#features5-s'> <li className="nav-item"><a className="nav-link link text-primary display-4">Serviços</a></li></Link>
+                        <Link to='/trabalheconosco'> <li className="nav-item"><a className="nav-link link text-primary display-4">Trabalhe Conosco</a></li></Link>
                         <li className="nav-item dropdown">
                             <a className="nav-link link dropdown-toggle text-primary display-4" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Contatos</a>
                             <div className="dropdown-menu" aria-labelledby="dropdown-108">
                                 <Link to='/contato#form5-1v'> <a className="dropdown-item text-primary display-4">Fale Conosco</a></Link>
                                 <Link to='/denuncia#form5-1v'> <a className="dropdown-item text-primary display-4">Denúncias</a></Link>
-                                <Link to="/trabalheconosco"><a className="dropdown-item text-primary display-4">Trabalhe Conosco</a></Link>
                                 <Link to='/fornecedor'>  <a className="dropdown-item text-primary display-4">Pré-Cadastro de Fornecedor</a></Link>
 
                             </div></li>

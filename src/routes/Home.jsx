@@ -86,6 +86,30 @@ function Home() {
         </div>
       </div>
     </section>
+    {/* Seção para PCD */}
+    <section data-bs-version="5.1" class="features4 cid-toLOfZtTw7" id="features-pcd">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6">
+            <div class="card-wrapper">
+              <div class="card-box align-left">
+                <h4 class="card-title mbr-fonts-style mb-4 display-2">
+                  <strong>Trabalhe Conosco (PCDs)</strong>
+                </h4>
+                <p class="mbr-text mbr-fonts-style mb-4 display-7">
+                  Se você é pessoa com deficiência, faça parte do nosso time! Cadastre seu currículo e participe de nosso processo seletivo inclusivo.
+                </p>
+                <div class="mbr-section-btn">
+                  <Link to="/trabalheconosco" class="btn btn-primary display-4">
+                    Cadastre-se
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section data-bs-version="5.1" class="features4 cid-toLOfZtTw7" id="features5-s">
       <div class="container">
@@ -280,7 +304,7 @@ function Home() {
             </div>
           </div>
           <div class="col-12 col-lg-6">
-           
+
           </div>
         </div>
       </div>

@@ -27,6 +27,7 @@ function TrabalheForm() {
     const [mask, setMask] = useState("");
     const [checked, setCheked] = useState(false);
     const [isPCD, setIsPCD] = useState(false);
+    const [isAprendiz, setIsAprendiz] = useState(false);
     const [tipoDeficiencia, setTipoDeficiencia] = useState("");
     const [detalhesDeficiencia, setDetalhesDeficiencia] = useState("");
     const [necessidadesEspecificas, setNecessidadesEspecificas] = useState("");
@@ -120,6 +121,7 @@ function TrabalheForm() {
                                 urlCurriculum: url,
                                 data: new Date().toLocaleDateString('pt-br'),
                                 isPCD,
+                                isAprendiz,
                                 ...(isPCD && {
                                     tipoDeficiencia,
                                     detalhesDeficiencia,
@@ -241,16 +243,26 @@ function TrabalheForm() {
                                     type="checkbox"
                                     checked={isPCD}
                                     onChange={(e) => setIsPCD(e.target.checked)}
+                                    style={{ marginLeft: 10, padding: 5 }}
+                                    disabled={isAprendiz}
+                                />
+                                <label className='form-label' style={{ marginLeft: 10 }}> É Aprendiz? </label>
+                                <input
+                                    type="checkbox"
+                                    checked={isAprendiz}
+                                    onChange={(e) => setIsAprendiz(e.target.checked)}
+                                    style={{ marginLeft: 10, padding: 5 }}
+                                    disabled={isPCD}
                                 />
                             </div>
                             {isPCD && (
                                 <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
-                                     <label className='form-label'>Tipo de Deficiencia:</label>
+                                    <label className='form-label'>Tipo de Deficiencia:</label>
                                     <select
                                         value={tipoDeficiencia}
                                         onChange={(e) => setTipoDeficiencia(e.target.value)}
                                         required
-                                         className='form-control'
+                                        className='form-control'
                                     >
                                         <option value="">Selecione</option>
                                         <option value="Física">Física</option>
@@ -264,14 +276,14 @@ function TrabalheForm() {
                                         className='form-control'
                                         placeholder="Detalhes da deficiência"
                                         value={detalhesDeficiencia}
-                                        onChange={event=>setDetalhesDeficiencia(event.target.value)}
+                                        onChange={event => setDetalhesDeficiencia(event.target.value)}
                                         type="text"
                                     />
                                     <input
                                         className='form-control'
                                         placeholder="Necessidades específicas (Ex: Acessibilidade)"
                                         value={necessidadesEspecificas}
-                                        onChange={event=>setNecessidadesEspecificas(event.target.value)}
+                                        onChange={event => setNecessidadesEspecificas(event.target.value)}
                                         type="text"
                                     />
                                 </div>
@@ -299,7 +311,7 @@ function TrabalheForm() {
                                 <span class="textGDPR display-7" style={{ color: '#a7a7a7' }}><input type="checkbox"
                                     name="gdpr" id="gdpr-form7-1k" checked={checked} onChange={() => setCheked(!checked)} />Eu concordo com os termos de serviços <a
                                         style={{ color: '#149dcc', }} href="terms.html">Termos e serviços</a> e com a  <a style={{ color: '#149cc', textDecoration: 'none' }}
-                                            href="policy.html">Política de Privacidade</a>.</span>
+                                            href="/etica#content6-1n">Política de Privacidade</a>.</span>
                             </label>
                         </span>
                         {
