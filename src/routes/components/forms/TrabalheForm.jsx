@@ -38,7 +38,7 @@ function TrabalheForm() {
     }
 
 
-console.log(cpf)
+    console.log(cpf)
     async function HandlerSendFormTrabalhe(e) {
         e.preventDefault()
         if (nome === "") {
@@ -81,17 +81,29 @@ console.log(cpf)
                     data.push(doc.data())
                 })
                 setCurriculoData(data)
+                console.log(data)
 
             }).catch((err) => { console.log(err) });
             // verifica se possui curriculo enviado com o mesmo cpf no mesmo dia
             let searchQuery = curriculoData.filter(curriculo => curriculo.cpf.includes(cpf))
+            console.log(searchQuery)
 
             // caso haja ele informa que o curriculo ja se encontra cadastrado
-            if (searchQuery[searchQuery.length - 1].data === new Date().toLocaleDateString('pt-br')) {
-                setResultTrue('')
-                setError('O Curriculo informado já foi enviado nos ultimos dias, aguarde 30 dias e reenvie novamente')
-                handlerTimeout(estado, setError, 10000)
-                setProgress(0)
+            if (searchQuery.length > 0) {
+                const lastEntryDate = new Date(
+                    searchQuery[searchQuery.length - 1].data.split('/').reverse().join('-')
+                ); // Converte 'DD/MM/AAAA' para um objeto Date.
+                const currentDate = new Date();
+
+                // Calcula a diferença em milissegundos e converte para dias.
+                const differenceInDays = Math.floor((currentDate - lastEntryDate) / (1000 * 60 * 60 * 24));
+
+                if (differenceInDays <= 30) {
+                    setResultTrue('');
+                    setError('O Currículo informado já foi enviado nos últimos 30 dias. Aguarde para reenviar.');
+                    handlerTimeout(estado, setError, 10000);
+                    setProgress(0);
+                }
             } else {
                 const storageRef = ref(storage, `vitaes/${file.name}`)
                 const uploadTask = uploadBytesResumable(storageRef, file)
@@ -253,7 +265,7 @@ console.log(cpf)
                                     onChange={(e) => setIsAprendiz(e.target.checked)}
                                     style={{ marginLeft: 10, padding: 5 }}
                                     disabled={isPCD}
-                                                                    />
+                                />
                             </div>
                             {isPCD && (
                                 <div class="col-6 form-group mb-3 labelcontrol" data-for="url">
