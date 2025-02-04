@@ -31,6 +31,7 @@ function TrabalheForm() {
     const [tipoDeficiencia, setTipoDeficiencia] = useState("");
     const [detalhesDeficiencia, setDetalhesDeficiencia] = useState("");
     const [necessidadesEspecificas, setNecessidadesEspecificas] = useState("");
+    const [funcao, setFuncao] = useState("")
     function handlerTimeout(value, state, count) {
         setTimeout(() => {
             state("")
@@ -59,7 +60,12 @@ function TrabalheForm() {
         } else if (nasc == "") {
             setError('Selecione a data de nascimento')
             handlerTimeout(nasc, setError, 5000)
-        } else if (estado === "") {
+        } 
+        else if (funcao === "") {
+            setError('Selecione um função')
+            handlerTimeout(funcao, setError, 5000)
+        }
+        else if (estado === "") {
             setError('Selecione um estado')
             handlerTimeout(estado, setError, 5000)
         }
@@ -67,6 +73,7 @@ function TrabalheForm() {
             setError('Selecione um estado')
             handlerTimeout(cidade, setError, 5000)
         }
+        
         else if (file === "") {
             setError('Selecione um arquivo no formato PDF')
             handlerTimeout(estado, setError, 3000)
@@ -139,6 +146,7 @@ function TrabalheForm() {
                                     detalhesDeficiencia,
                                     necessidadesEspecificas,
                                 }),
+                                funcao
 
                             })
                             setResultTrue('Curriculo enviado com sucesso!')
@@ -213,9 +221,63 @@ function TrabalheForm() {
                                 <input type="date" name="telephone" id="" className='form-control' onChange={event => setNasc(event.target.value)} />
                             </div>
                             <div class="col-sm-12 form-group mb-3 labelcontrol" data-for="url">
+                                <label htmlFor="" className='form-label' >Função: </label>
+                                <select class="form-select" required="" onChange={event => setFuncao(event.target.value)}>
+                                    <option value="">[Selecione uma Função]</option>
+                                    <option value="ajudante-eletricicista">Ajudante Eletricicista</option>
+                                    <option value="ajudante-eletromecan">Ajudante Eletromecan</option>
+                                    <option value="ajudante-encanador">Ajudante Encanador</option>
+                                    <option value="ajudante-serralheiro">Ajudante de Serralheiro</option>
+                                    <option value="ajudante-soldador">Ajudante de Soldador</option>
+                                    <option value="almoxarife">Almoxarife</option>
+                                    <option value="apontador">Apontador</option>
+                                    <option value="armador">Armador</option>
+                                    <option value="assistente-engenharia">Assistente Engenharia</option>
+                                    <option value="aux-eletricista">AUX Eletricista</option>
+                                    <option value="auxiliar-de-montagem">Auxiliar de Montagem</option>
+                                    <option value="auxiliar-de-pintor">Auxiliar de Pintor</option>
+                                    <option value="auxiliar-licitacao">Auxiliar Licitação</option>
+                                    <option value="bombeiro-civil">Bombeiro Civil</option>
+                                    <option value="cabista">Cabista</option>
+                                    <option value="cadista">Cadista</option>
+                                    <option value="calceteiro">Calceteiro</option>
+                                    <option value="carpinteiro">Carpinteiro</option>
+                                    <option value="comprador">Comprador</option>
+                                    <option value="elet-forca-controle">ELET Força Controle</option>
+                                    <option value="elet-montador">ELET Montador</option>
+                                    <option value="eletricista">Eletricista</option>
+                                    <option value="eletricista-montador">Eletricista Montador</option>
+                                    <option value="eletrotecnico">Eletrotécnico</option>
+                                    <option value="eng-eletricista">ENG Eletricista</option>
+                                    <option value="eng-seg-trab">ENG de SEG do TRAB</option>
+                                    <option value="esteticista">Esteticista</option>
+                                    <option value="ferreiro">Ferreiro</option>
+                                    <option value="fiscal">Fiscal</option>
+                                    <option value="marceneiro">Marceneiro</option>
+                                    <option value="mecanico">Mecânico</option>
+                                    <option value="montador">Montador</option>
+                                    <option value="motorista">Motorista</option>
+                                    <option value="motorista-eletricista">Motorista Eletricista</option>
+                                    <option value="ope-retroescavadeira">OPE de Retroescavadeira</option>
+                                    <option value="operador-bombas">Operador de Bombas</option>
+                                    <option value="operador-munk">Operador de Munk</option>
+                                    <option value="pedreiro">Pedreiro</option>
+                                    <option value="pintor">Pintor</option>
+                                    <option value="podador">Podador</option>
+                                    <option value="serralheiro">Serralheiro</option>
+                                    <option value="servente">Servente</option>
+                                    <option value="soldador">Soldador</option>
+                                    <option value="tecnico-eltromecanico">Técnico Eletromecânico</option>
+                                    <option value="tecnico-mecanico">Técnico Mecânico</option>
+                                    <option value="tecnico-saneamento">Técnico Saneamento</option>
+                                    <option value="topografo">Topógrafo</option>
+
+                                </select>
+                            </div>
+                            <div class="col-sm-12 form-group mb-3 labelcontrol" data-for="url">
                                 <label htmlFor="" className='form-label' >Estado: </label>
                                 <select class="form-select" required="" onChange={event => setEstado(event.target.value)}>
-                                    <option value="">[Selecione uma opção]</option>
+                                    <option value="">[Selecione um Estado]</option>
                                     <option value="Acre">Acre</option>
                                     <option value="Alagoas">Alagoas</option>
                                     <option value="Amapá">Amapá</option>
